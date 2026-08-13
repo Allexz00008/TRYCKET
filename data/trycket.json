@@ -1,0 +1,130 @@
+{
+ "version": 2,
+ "updatedAt": "2026-08-13T16:47:00.156Z",
+ "installningar": {
+  "foretag": {
+   "namn": "",
+   "orgnr": "",
+   "adress": "",
+   "postort": "",
+   "tel": "",
+   "epost": "",
+   "bankgiro": "",
+   "swish": "",
+   "momsnr": "",
+   "fskatt": true
+  },
+  "moms": 25,
+  "rutProcent": 50,
+  "rutTak": 75000,
+  "betalvillkor": 30,
+  "offertGiltig": 30,
+  "nastaFakturaNr": 1001,
+  "nastaOffertNr": 101,
+  "schemaStart": 7,
+  "schemaSlut": 21,
+  "prislista": [
+   {
+    "id": "msrr2xu9hisys",
+    "namn": "Fasadtvätt",
+    "enhet": "m²",
+    "pris": 55,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu9v88zn",
+    "namn": "Taktvätt",
+    "enhet": "m²",
+    "pris": 75,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu90delv",
+    "namn": "Altan / trädäck",
+    "enhet": "m²",
+    "pris": 45,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu9ni2kf",
+    "namn": "Uppfart / plattor",
+    "enhet": "m²",
+    "pris": 35,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu91w5d2",
+    "namn": "Staket",
+    "enhet": "lpm",
+    "pris": 40,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu9t8h46",
+    "namn": "Garageport",
+    "enhet": "st",
+    "pris": 350,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu914i4c",
+    "namn": "Arbete löpande",
+    "enhet": "tim",
+    "pris": 650,
+    "rut": true
+   },
+   {
+    "id": "msrr2xu9h39al",
+    "namn": "Framkörning",
+    "enhet": "st",
+    "pris": 500,
+    "rut": false
+   },
+   {
+    "id": "msrr2xu9oibgh",
+    "namn": "Material / kemi",
+    "enhet": "st",
+    "pris": 0,
+    "rut": false
+   }
+  ]
+ },
+ "mal": {
+  "vecka": {
+   "dorrar": 150,
+   "samtal": 40,
+   "offerter": 8,
+   "salt": 25000,
+   "timlonSalj": 400,
+   "timlonJobb": 500
+  },
+  "manad": {
+   "salt": 100000,
+   "jobb": 12
+  }
+ },
+ "kunder": [],
+ "offerter": [],
+ "fakturor": [],
+ "schema": [
+  {
+   "id": "msrr3ltofxc84",
+   "typ": "salj",
+   "titel": "Säljpass",
+   "datum": "2026-08-13",
+   "start": "09:00",
+   "slut": "15:00",
+   "plats": "",
+   "kundId": "",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": []
+  }
+ ],
+ "dorrar": []
+}
