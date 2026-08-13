@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-13T16:49:53.795Z",
+ "updatedAt": "2026-08-13T19:41:13.274Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -86,6 +86,13 @@
     "enhet": "st",
     "pris": 0,
     "rut": false
+   },
+   {
+    "id": "msrxbni2ggign",
+    "namn": "Stupränna",
+    "enhet": "tim",
+    "pris": 2000,
+    "rut": true
    }
   ]
  },
