@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-13T16:47:00.156Z",
+ "updatedAt": "2026-08-13T16:48:54.576Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -25,63 +25,63 @@
   "schemaSlut": 21,
   "prislista": [
    {
-    "id": "msrr2xu9hisys",
+    "id": "msrppd3kfwucq",
     "namn": "Fasadtvätt",
     "enhet": "m²",
     "pris": 55,
     "rut": true
    },
    {
-    "id": "msrr2xu9v88zn",
+    "id": "msrppd3kp89r2",
     "namn": "Taktvätt",
     "enhet": "m²",
     "pris": 75,
     "rut": true
    },
    {
-    "id": "msrr2xu90delv",
+    "id": "msrppd3k8z47l",
     "namn": "Altan / trädäck",
     "enhet": "m²",
     "pris": 45,
     "rut": true
    },
    {
-    "id": "msrr2xu9ni2kf",
+    "id": "msrppd3kgua76",
     "namn": "Uppfart / plattor",
     "enhet": "m²",
     "pris": 35,
     "rut": true
    },
    {
-    "id": "msrr2xu91w5d2",
+    "id": "msrppd3kp08dr",
     "namn": "Staket",
     "enhet": "lpm",
     "pris": 40,
     "rut": true
    },
    {
-    "id": "msrr2xu9t8h46",
+    "id": "msrppd3kwdqal",
     "namn": "Garageport",
     "enhet": "st",
     "pris": 350,
     "rut": true
    },
    {
-    "id": "msrr2xu914i4c",
+    "id": "msrppd3k33zs9",
     "namn": "Arbete löpande",
     "enhet": "tim",
     "pris": 650,
     "rut": true
    },
    {
-    "id": "msrr2xu9h39al",
+    "id": "msrppd3k5yfpi",
     "namn": "Framkörning",
     "enhet": "st",
     "pris": 500,
     "rut": false
    },
    {
-    "id": "msrr2xu9oibgh",
+    "id": "msrppd3kd48sz",
     "namn": "Material / kemi",
     "enhet": "st",
     "pris": 0,
@@ -108,7 +108,7 @@
  "fakturor": [],
  "schema": [
   {
-   "id": "msrr3ltofxc84",
+   "id": "msrr6240djsik",
    "typ": "salj",
    "titel": "Säljpass",
    "datum": "2026-08-13",
