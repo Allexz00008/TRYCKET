@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-13T16:49:10.516Z",
+ "updatedAt": "2026-08-13T16:49:39.304Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -106,6 +106,25 @@
  "kunder": [],
  "offerter": [],
  "fakturor": [],
- "schema": [],
+ "schema": [
+  {
+   "id": "msrr70mg5xy5f",
+   "datum": "2026-08-13",
+   "start": "16:49",
+   "slut": "18:49",
+   "typ": "salj",
+   "titel": "Säljrunda",
+   "plats": "",
+   "kundId": "",
+   "notering": "",
+   "klar": true,
+   "jobb": [],
+   "dorrar": 4,
+   "oppnade": 2,
+   "samtal": 2,
+   "offerter": 3,
+   "saltBelopp": 0
+  }
+ ],
  "dorrar": []
 }
