@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-13T16:48:54.576Z",
+ "updatedAt": "2026-08-13T16:49:10.516Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -106,25 +106,6 @@
  "kunder": [],
  "offerter": [],
  "fakturor": [],
- "schema": [
-  {
-   "id": "msrr6240djsik",
-   "typ": "salj",
-   "titel": "Säljpass",
-   "datum": "2026-08-13",
-   "start": "09:00",
-   "slut": "15:00",
-   "plats": "",
-   "kundId": "",
-   "notering": "",
-   "klar": false,
-   "dorrar": 0,
-   "oppnade": 0,
-   "samtal": 0,
-   "offerter": 0,
-   "saltBelopp": 0,
-   "jobb": []
-  }
- ],
+ "schema": [],
  "dorrar": []
 }
