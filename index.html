@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="sv" data-tema="morker">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TRYCKET — dörrförsäljning &amp; högtryckstvätt</title>
+<meta name="theme-color" content="#0D2A2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --r:10px; --pad:15px; --pph:46px;
+}
+html[data-tema="morker"]{
+  --bak:#0C2A2E; --yta:#123539; --yta2:#17434A; --yta3:#0A2225;
+  --linje:#20565D; --linje-svag:#1A464C; --text:#E9F2F0; --dov:#83A8A9;
+  --accent:#2ED3C6; --accent-mork:#0FA79A; --accent2:#F5A623; --gron:#3FD08A; --rod:#FF7062;
+  --pa-accent:#052A28;
+}
+html[data-tema="ljus"]{
+  --bak:#ECEFE9; --yta:#FFFFFF; --yta2:#F4F7F2; --yta3:#E3E8E0;
+  --linje:#CBD4CB; --linje-svag:#E1E7DF; --text:#0D2A2E; --dov:#5D7B7C;
+  --accent:#0C7E75; --accent-mork:#065C55; --accent2:#B4690E; --gron:#0F8558; --rod:#C0392B;
+  --pa-accent:#FFFFFF;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bak);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--disp);margin:0;font-weight:600;letter-spacing:-.015em}
+button,input,select,textarea{font-family:inherit;font-size:15px;color:inherit}
+a{color:var(--accent)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* --- Topp --- */
+.topp{position:sticky;top:0;z-index:40;background:var(--yta3);border-bottom:1px solid var(--linje);padding:env(safe-area-inset-top) 0 0}
+.topp-rad{display:flex;align-items:center;gap:9px;padding:11px 15px 9px}
+.logo{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.03em;line-height:1}
+.logo em{font-style:normal;color:var(--accent)}
+.topp-sub{font-family:var(--mono);font-size:10px;color:var(--dov);letter-spacing:.02em;margin-top:3px}
+.ikonknapp{background:var(--yta);border:1px solid var(--linje);color:var(--dov);border-radius:8px;
+  padding:7px 10px;cursor:pointer;font-size:14px;line-height:1}
+.ikonknapp:hover{color:var(--text);border-color:var(--accent)}
+.synk{display:flex;align-items:center;gap:7px;background:var(--yta);border:1px solid var(--linje);color:var(--dov);
+  font-family:var(--mono);font-size:11px;padding:7px 11px;border-radius:8px;cursor:pointer}
+.prick{width:7px;height:7px;border-radius:2px;background:var(--dov);flex:none;transform:rotate(45deg)}
+.prick.ok{background:var(--gron)} .prick.jobbar{background:var(--accent);animation:puls 1s infinite}
+.prick.fel{background:var(--accent2)}
+@keyframes puls{50%{opacity:.2}}
+.flikar{display:flex;overflow-x:auto;scrollbar-width:none;gap:2px;padding:0 11px 9px}
+.flikar::-webkit-scrollbar{display:none}
+.flik{flex:none;background:transparent;border:1px solid transparent;color:var(--dov);padding:7px 12px;border-radius:100px;
+  font-family:var(--disp);font-weight:500;font-size:14px;cursor:pointer;white-space:nowrap}
+.flik:hover{color:var(--text)}
+.flik[aria-selected="true"]{background:var(--accent);color:var(--pa-accent);font-weight:600}
+
+/* --- Layout --- */
+.omslag{max-width:1120px;margin:0 auto;padding:15px 15px 110px}
+.kort{background:var(--yta);border:1px solid var(--linje);border-radius:var(--r);padding:var(--pad);margin-bottom:12px}
+.kort-topp{display:flex;align-items:center;gap:10px;margin-bottom:13px;flex-wrap:wrap}
+.kort-topp h2{font-size:17px}
+.hnt{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--dov)}
+.etikett{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--dov)}
+.rutnat{display:grid;gap:12px}
+@media(min-width:800px){.rutnat.tva{grid-template-columns:1fr 1fr}}
+
+/* --- Mätare --- */
+.matare{margin-bottom:15px}.matare:last-child{margin-bottom:0}
+.matare-topp{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.matare-namn{font-family:var(--disp);font-weight:600;font-size:15px}
+.matare-tal{margin-left:auto;font-family:var(--mono);font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.matare-tal i{font-style:normal;color:var(--dov);font-size:12px;font-weight:400}
+.matare-spar{position:relative;height:10px;background:var(--yta3);border-radius:100px;overflow:hidden}
+.matare-fyll{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:100px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.matare-fyll.full{background:var(--gron)}
+.matare-fot{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--dov);margin-top:5px}
+
+/* --- Nyckeltal --- */
+.tal-rutnat{display:grid;grid-template-columns:repeat(auto-fit,minmax(122px,1fr));gap:9px}
+.tal{background:var(--yta2);border:1px solid var(--linje-svag);border-radius:8px;padding:11px 12px}
+.tal b{display:block;font-family:var(--mono);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.25}
+.tal span{font-family:var(--mono);font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--dov)}
+.tal i{font-style:normal;font-size:11px;color:var(--dov);display:block;margin-top:2px}
+.tal.gron b{color:var(--gron)} .tal.accent b{color:var(--accent)} .tal.varn b{color:var(--accent2)} .tal.rod b{color:var(--rod)}
+.tal.stor b{font-size:27px}
+
+/* --- Knappar --- */
+.knapp{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--yta2);color:var(--text);
+  border:1px solid var(--linje);border-radius:8px;padding:9px 14px;font-family:var(--disp);font-weight:500;cursor:pointer;transition:.13s}
+.knapp:hover{border-color:var(--accent)}
+.knapp.primar{background:var(--accent);color:var(--pa-accent);border-color:var(--accent);font-weight:600}
+.knapp.primar:hover{background:var(--accent-mork);border-color:var(--accent-mork)}
+.knapp.fara{color:var(--rod);border-color:var(--rod);background:transparent}
+.knapp.liten{padding:6px 11px;font-size:13px}
+.knapp:focus-visible,.flik:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.ikonknapp:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.knappar{display:flex;gap:8px;flex-wrap:wrap}
+.valjare{display:inline-flex;background:var(--yta3);border:1px solid var(--linje);border-radius:8px;padding:2px;gap:2px}
+.valjare button{background:none;border:0;color:var(--dov);padding:6px 12px;border-radius:6px;cursor:pointer;
+  font-family:var(--disp);font-weight:500;font-size:13px}
+.valjare button[aria-pressed="true"]{background:var(--accent);color:var(--pa-accent);font-weight:600}
+
+/* --- Formulär --- */
+.falt{margin-bottom:11px}
+.falt label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dov);margin-bottom:5px}
+.falt input,.falt select,.falt textarea{width:100%;padding:10px 11px;border:1px solid var(--linje);border-radius:8px;
+  background:var(--yta2);color:var(--text)}
+.falt textarea{min-height:66px;resize:vertical}
+.falt-rad{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.falt-rad.tre{grid-template-columns:1fr 1fr 1fr}
+input[type=number]{font-family:var(--mono);font-variant-numeric:tabular-nums}
+input[type=date],input[type=time]{min-height:42px}
+.kryss{display:flex;align-items:center;gap:8px}
+.kryss input{width:auto}
+
+/* --- Listor --- */
+.post{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid var(--linje-svag);cursor:pointer}
+.post:last-child{border-bottom:0}
+.post:hover{background:var(--yta2);margin:0 -9px;padding-left:9px;padding-right:9px;border-radius:8px}
+.post-huvud{font-family:var(--disp);font-weight:600;font-size:15px}
+.post-meta{font-size:13px;color:var(--dov)}
+.post-hoger{margin-left:auto;text-align:right;flex:none}
+.belopp{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.marke{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 8px;border-radius:100px;border:1px solid var(--linje);color:var(--dov);background:var(--yta2)}
+.marke.accent{color:var(--accent);border-color:var(--accent)}
+.marke.gron{color:var(--gron);border-color:var(--gron)}
+.marke.varn{color:var(--accent2);border-color:var(--accent2)}
+.marke.rod{color:var(--rod);border-color:var(--rod)}
+.tom{text-align:center;padding:26px 14px;color:var(--dov)}
+.tom h3{font-size:16px;margin-bottom:5px;color:var(--text)}
+.sok{width:100%;padding:11px 13px;border:1px solid var(--linje);border-radius:8px;background:var(--yta);color:var(--text);margin-bottom:12px}
+
+/* --- SCHEMARUTNÄT --- */
+.schemaram{border:1px solid var(--linje);border-radius:var(--r);background:var(--yta);overflow:hidden}
+.schemarull{overflow-x:auto;scrollbar-width:thin}
+.schemainre{min-width:660px}
+.rutrad{display:grid;grid-template-columns:46px repeat(7,minmax(86px,1fr))}
+.rutrubrik{position:sticky;top:0;z-index:3;background:var(--yta3);border-bottom:1px solid var(--linje)}
+.rutrubrik>div{padding:8px 6px;text-align:center;border-left:1px solid var(--linje-svag)}
+.rutrubrik>div:first-child{border-left:0}
+.rutrubrik .dnamn{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dov)}
+.rutrubrik .dnr{font-family:var(--disp);font-weight:600;font-size:16px}
+.rutrubrik .idag .dnr{color:var(--accent)}
+.rutrubrik .idag{background:var(--yta2);box-shadow:inset 0 -3px 0 var(--accent)}
+.rutkropp{position:relative}
+.rutkolumn{position:relative;border-left:1px solid var(--linje-svag);
+  background:repeating-linear-gradient(180deg,transparent 0 calc(var(--pph) - 1px),var(--linje-svag) calc(var(--pph) - 1px) var(--pph))}
+.rutkolumn.helg{background-color:var(--yta3)}
+.ruttider{position:relative}
+.ruttid{height:var(--pph);font-family:var(--mono);font-size:10px;color:var(--dov);text-align:right;padding:2px 6px 0 0;
+  border-bottom:1px solid var(--linje-svag)}
+.blk{position:absolute;left:2px;right:2px;border-radius:6px;padding:5px 6px;overflow:hidden;cursor:pointer;
+  border-left:3px solid;font-size:12px;line-height:1.25;transition:.12s}
+.blk:hover{filter:brightness(1.15);z-index:2}
+.blk b{font-family:var(--disp);font-weight:600;font-size:12px;display:block}
+.blk span{font-family:var(--mono);font-size:9px;opacity:.75;display:block}
+.blk.salj{background:color-mix(in srgb,var(--accent) 22%,var(--yta));border-color:var(--accent)}
+.blk.jobb{background:color-mix(in srgb,var(--gron) 22%,var(--yta));border-color:var(--gron)}
+.blk.ovrigt{background:var(--yta2);border-color:var(--dov)}
+.blk.klar{opacity:.5}
+.heldag{display:flex;gap:6px;flex-wrap:wrap;padding:8px;border-bottom:1px solid var(--linje-svag)}
+.heldag .chip{font-size:12px;padding:4px 9px;border-radius:100px;border:1px solid var(--linje);cursor:pointer;background:var(--yta2)}
+
+/* --- Pass i listvy --- */
+.dagkort{border:1px solid var(--linje);border-radius:var(--r);background:var(--yta);margin-bottom:9px;overflow:hidden}
+.dagkort.idag{border-color:var(--accent)}
+.dagkort-topp{display:flex;align-items:center;gap:9px;padding:9px 13px;background:var(--yta2);border-bottom:1px solid var(--linje-svag)}
+.dagkort-topp b{font-family:var(--disp);font-size:15px}
+.dagkort-topp span{font-family:var(--mono);font-size:11px;color:var(--dov)}
+.pass{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border-bottom:1px solid var(--linje-svag);cursor:pointer}
+.pass:last-child{border-bottom:0}
+.pass:hover{background:var(--yta2)}
+.pass.klar .pass-titel{opacity:.55;text-decoration:line-through}
+.pass-tid{font-family:var(--mono);font-size:11px;color:var(--dov);width:78px;flex:none;font-variant-numeric:tabular-nums;padding-top:2px}
+.strimma{width:3px;align-self:stretch;border-radius:3px;background:var(--dov);flex:none}
+.strimma.salj{background:var(--accent)} .strimma.jobb{background:var(--gron)}
+.pass-titel{font-family:var(--disp);font-weight:600}
+.pass-stat{display:flex;gap:12px;flex-wrap:wrap;margin-top:5px;font-family:var(--mono);font-size:11px;color:var(--dov)}
+.pass-stat b{color:var(--text);font-weight:700}
+
+/* --- Räknare --- */
+.raknare{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+@media(min-width:560px){.raknare{grid-template-columns:repeat(4,1fr)}}
+.rakna{background:var(--yta2);border:1px solid var(--linje);border-radius:10px;padding:13px 8px;text-align:center;cursor:pointer;user-select:none;transition:.1s}
+.rakna:active{transform:scale(.96);border-color:var(--accent)}
+.rakna b{display:block;font-family:var(--mono);font-size:30px;font-weight:700;line-height:1.1}
+.rakna span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dov)}
+.rakna-minus{display:block;width:100%;margin-top:8px;background:var(--yta3);border:1px solid var(--linje-svag);border-radius:6px;
+  padding:4px;font-family:var(--mono);font-size:12px;cursor:pointer;color:var(--dov)}
+
+/* --- Rader --- */
+.rad-tabell{width:100%;border-collapse:collapse;font-size:14px}
+.rad-tabell th{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--dov);text-align:left;padding:0 4px 6px;font-weight:400}
+.rad-tabell td{padding:3px;border-top:1px solid var(--linje-svag);vertical-align:middle}
+.rad-tabell input,.rad-tabell select{width:100%;padding:7px 8px;border:1px solid var(--linje);border-radius:6px;background:var(--yta2);color:var(--text);font-size:14px}
+.rad-tabell .kol-sum{font-family:var(--mono);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rad-bort{background:none;border:0;color:var(--rod);cursor:pointer;font-size:19px;padding:0 4px;line-height:1}
+.summa{margin-top:13px;border-top:2px solid var(--linje);padding-top:10px}
+.summa-rad{display:flex;justify-content:space-between;padding:3px 0;font-size:14px}
+.summa-rad span:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.summa-rad.stor{font-family:var(--disp);font-weight:700;font-size:19px;border-top:1px solid var(--linje);margin-top:7px;padding-top:9px}
+.summa-rad.rut span:last-child{color:var(--gron)}
+
+/* --- Modal --- */
+.skugga{position:fixed;inset:0;background:rgba(4,18,20,.65);z-index:100;display:flex;align-items:flex-end;justify-content:center;overflow-y:auto;animation:in .14s}
+@media(min-width:640px){.skugga{align-items:center;padding:24px}}
+@keyframes in{from{opacity:0}}
+.modal{background:var(--yta);width:100%;max-width:660px;border:1px solid var(--linje);border-radius:16px 16px 0 0;max-height:93vh;
+  display:flex;flex-direction:column;animation:upp .2s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:640px){.modal{border-radius:14px}}
+@keyframes upp{from{transform:translateY(22px);opacity:.5}}
+.modal-topp{display:flex;align-items:center;gap:10px;padding:15px;border-bottom:1px solid var(--linje)}
+.modal-topp h3{font-size:17px}
+.modal-kropp{padding:15px;overflow-y:auto;flex:1}
+.modal-fot{display:flex;gap:8px;padding:12px 15px;border-top:1px solid var(--linje);background:var(--yta2);flex-wrap:wrap;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+.modal-fot .knapp{flex:1;min-width:110px}
+.stang{margin-left:auto;background:none;border:0;font-size:25px;line-height:1;color:var(--dov);cursor:pointer;padding:0 4px}
+
+/* --- Toast --- */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom));z-index:200;
+  background:var(--yta3);border:1px solid var(--linje);color:var(--text);padding:12px 15px;border-radius:10px;
+  display:flex;align-items:center;gap:13px;font-size:14px;max-width:calc(100% - 26px);animation:upp .18s}
+.toast button{background:none;border:0;color:var(--accent);font-family:var(--disp);font-weight:600;cursor:pointer;white-space:nowrap}
+
+/* --- Stapeljämförelse --- */
+.stapelrad{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.stapelrad .namn{width:96px;flex:none;font-size:13px}
+.stapelrad .spar{flex:1;height:22px;background:var(--yta3);border-radius:5px;overflow:hidden}
+.stapelrad .fyll{height:100%;border-radius:5px;transition:width .4s}
+.stapelrad .varde{font-family:var(--mono);font-size:13px;font-weight:700;width:88px;text-align:right;flex:none}
+
+/* --- Utskrift --- */
+#utskrift{display:none}
+@media print{ body{background:#fff} body>*{display:none!important} #utskrift{display:block!important} @page{margin:18mm} }
+.pf{font-family:var(--body);color:#111;font-size:12px;background:#fff}
+.pf h1{font-family:var(--disp);font-size:27px;letter-spacing:-.02em}
+.pf-topp{display:flex;justify-content:space-between;border-bottom:3px solid #111;padding-bottom:10px;margin-bottom:16px}
+.pf-tva{display:flex;gap:36px;margin-bottom:18px}.pf-tva>div{flex:1}
+.pf .et{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#666;margin-bottom:3px}
+.pf table{width:100%;border-collapse:collapse;margin-bottom:14px}
+.pf th{text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#666;border-bottom:1px solid #111;padding:5px 4px}
+.pf td{padding:6px 4px;border-bottom:1px solid #ddd}
+.pf .h{text-align:right;font-family:var(--mono)}
+.pf-sum{margin-left:auto;width:280px}
+.pf-sum div{display:flex;justify-content:space-between;padding:3px 0}
+.pf-sum .tot{border-top:2px solid #111;margin-top:5px;padding-top:6px;font-weight:700;font-size:16px;font-family:var(--disp)}
+.pf-fot{margin-top:26px;padding-top:10px;border-top:1px solid #bbb;font-size:10px;color:#555;display:flex;gap:22px}
+.pf-fot>div{flex:1}
+</style>
+</head>
+<body>
+
+<header class="topp">
+  <div class="topp-rad">
+    <div style="flex:1;min-width:0">
+      <div class="logo">TRYCK<em>ET</em></div>
+      <div class="topp-sub" id="toppSub">—</div>
+    </div>
+    <button class="ikonknapp" id="temaKnapp" title="Byt mellan mörkt och ljust">◐</button>
+    <button class="ikonknapp" onclick="angra()" title="Ångra senaste (Ctrl+Z)">↶</button>
+    <button class="synk" id="synkKnapp"><span class="prick" id="synkPrick"></span><span id="synkText">Ej kopplad</span></button>
+  </div>
+  <nav class="flikar" id="flikar" role="tablist"></nav>
+</header>
+
+<main class="omslag" id="app"></main>
+<div id="modalRot"></div>
+<div id="toastRot"></div>
+<div id="utskrift"></div>
+
+<script>
+/* ==========================================================================
+   TRYCKET v2 — dörrförsäljning och högtryckstvätt
+   ========================================================================== */
+const NYCKEL='trycket.state.v1', NYCKEL_SYNK='trycket.synk.v1', NYCKEL_TEMA='trycket.tema';
+
+const $=s=>document.querySelector(s);
+const id=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const klon=o=>JSON.parse(JSON.stringify(o));
+const nf=new Intl.NumberFormat('sv-SE',{maximumFractionDigits:0});
+const nf1=new Intl.NumberFormat('sv-SE',{maximumFractionDigits:1});
+const kr=n=>nf.format(Math.round(n||0))+' kr';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=v=>{const n=parseFloat(String(v).replace(',','.'));return isNaN(n)?0:n;};
+const proc=(a,b)=>b?Math.round(a/b*100):0;
+
+function ymd(d){const x=new Date(d);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0');}
+function parseYmd(s){const[a,b,c]=String(s).split('-').map(Number);return new Date(a,(b||1)-1,c||1);}
+function mandag(d){const x=new Date(d);const v=(x.getDay()+6)%7;x.setDate(x.getDate()-v);x.setHours(0,0,0,0);return x;}
+function veckoNr(d){const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));const g=t.getUTCDay()||7;
+  t.setUTCDate(t.getUTCDate()+4-g);const n=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-n)/86400000+1)/7);}
+function plusDagar(d,n){const x=new Date(d);x.setDate(x.getDate()+n);return x;}
+const DAGAR=['Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag','Söndag'];
+const DAGAR_K=['Mån','Tis','Ons','Tor','Fre','Lör','Sön'];
+const MAN=['januari','februari','mars','april','maj','juni','juli','augusti','september','oktober','november','december'];
+function datumText(s){const d=parseYmd(s);return d.getDate()+' '+MAN[d.getMonth()].slice(0,3);}
+function minuter(t){if(!t)return null;const[h,m]=t.split(':').map(Number);return h*60+(m||0);}
+
+/* ---------- Grunddata ---------- */
+function tomtLage(){
+  return {
+    version:2, updatedAt:new Date().toISOString(),
+    installningar:{
+      foretag:{namn:'',orgnr:'',adress:'',postort:'',tel:'',epost:'',bankgiro:'',swish:'',momsnr:'',fskatt:true},
+      moms:25, rutProcent:50, rutTak:75000, betalvillkor:30, offertGiltig:30,
+      nastaFakturaNr:1001, nastaOffertNr:101,
+      schemaStart:7, schemaSlut:21,
+      prislista:[
+        {id:id(),namn:'Fasadtvätt',enhet:'m²',pris:55,rut:true},
+        {id:id(),namn:'Taktvätt',enhet:'m²',pris:75,rut:true},
+        {id:id(),namn:'Altan / trädäck',enhet:'m²',pris:45,rut:true},
+        {id:id(),namn:'Uppfart / plattor',enhet:'m²',pris:35,rut:true},
+        {id:id(),namn:'Staket',enhet:'lpm',pris:40,rut:true},
+        {id:id(),namn:'Garageport',enhet:'st',pris:350,rut:true},
+        {id:id(),namn:'Arbete löpande',enhet:'tim',pris:650,rut:true},
+        {id:id(),namn:'Framkörning',enhet:'st',pris:500,rut:false},
+        {id:id(),namn:'Material / kemi',enhet:'st',pris:0,rut:false}
+      ]
+    },
+    mal:{vecka:{dorrar:150,samtal:40,offerter:8,salt:25000,timlonSalj:400,timlonJobb:500},manad:{salt:100000,jobb:12}},
+    kunder:[], offerter:[], fakturor:[], schema:[], dorrar:[]
+  };
+}
+
+let S, VY='oversikt', ANKARE=mandag(new Date()), sok='', schemaLage='rutnat', period='vecka';
+let angraStack=[], gorOmStack=[];
+
+function ladda(){
+  let d=null;
+  try{const r=localStorage.getItem(NYCKEL); if(r)d=JSON.parse(r);}catch(e){console.warn('Läsfel',e);}
+  return migrera(d);
+}
+function migrera(d){
+  if(!d)return tomtLage();
+  const bas=tomtLage();                       // orörda standardvärden
+  const s=Object.assign(tomtLage(),d);        // sparad data ovanpå en färsk bas
+  const di=d.installningar||{}, dm=d.mal||{};
+  s.installningar=Object.assign({},bas.installningar,di);
+  s.installningar.foretag=Object.assign({},bas.installningar.foretag,di.foretag||{});
+  if(!Array.isArray(s.installningar.prislista)||!s.installningar.prislista.length)
+    s.installningar.prislista=bas.installningar.prislista;
+  s.mal={vecka:Object.assign({},bas.mal.vecka,dm.vecka||{}),manad:Object.assign({},bas.mal.manad,dm.manad||{})};
+  ['kunder','offerter','fakturor','schema','dorrar'].forEach(k=>{if(!Array.isArray(s[k]))s[k]=[];});
+  // v1 -> v2: gamla dörrrundor blir säljpass, pass får nya fält
+  (s.schema||[]).forEach(p=>{
+    if(p.jobb===undefined)p.jobb=[];
+    ['dorrar','oppnade','samtal','offerter','saltBelopp'].forEach(k=>{if(p[k]===undefined)p[k]=0;});
+  });
+  if((d.version||1)<2 && Array.isArray(d.dorrar) && d.dorrar.length){
+    d.dorrar.forEach(r=>{
+      s.schema.push({id:id(),datum:r.datum,start:'',slut:'',typ:'salj',titel:r.omrade||'Säljrunda',plats:r.omrade||'',
+        kundId:'',notering:r.notering||'',klar:true,jobb:[],
+        dorrar:num(r.dorrar),oppnade:num(r.samtal),samtal:num(r.samtal),offerter:num(r.offerter),saltBelopp:0});
+    });
+    s.dorrar=[];
+  }
+  s.version=2;
+  return s;
+}
+function spara(){
+  try{localStorage.setItem(NYCKEL,JSON.stringify(S));}catch(e){toast('Lagringen är full — ladda ner en säkerhetskopia.');}
+  planeraPush();
+}
+function andra(text,fn){
+  angraStack.push({text,bild:klon(S)}); if(angraStack.length>80)angraStack.shift(); gorOmStack=[];
+  fn(S); S.updatedAt=new Date().toISOString(); spara(); rita(); toast(text,{knapp:'Ångra',gor:angra});
+}
+function angra(){
+  if(!angraStack.length)return toast('Inget att ångra');
+  const e=angraStack.pop(); gorOmStack.push({text:e.text,bild:klon(S)});
+  S=e.bild; S.updatedAt=new Date().toISOString(); spara(); rita(); toast('Ångrade: '+e.text,{knapp:'Gör om',gor:gorOm});
+}
+function gorOm(){
+  if(!gorOmStack.length)return toast('Inget att göra om');
+  const e=gorOmStack.pop(); angraStack.push({text:e.text,bild:klon(S)});
+  S=e.bild; S.updatedAt=new Date().toISOString(); spara(); rita(); toast('Gjorde om: '+e.text);
+}
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?gorOm():angra();}
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();gorOm();}
+  if(e.key==='Escape')stangModal();
+});
+
+/* ---------- Tema ---------- */
+function satTema(t){document.documentElement.dataset.tema=t;localStorage.setItem(NYCKEL_TEMA,t);
+  document.querySelector('meta[name=theme-color]').content=t==='morker'?'#0C2A2E':'#ECEFE9';}
+satTema(localStorage.getItem(NYCKEL_TEMA)||'morker');
+$('#temaKnapp').onclick=()=>satTema(document.documentElement.dataset.tema==='morker'?'ljus':'morker');
+
+/* ---------- Toast / modal ---------- */
+let toastTimer;
+function toast(text,val){
+  const rot=$('#toastRot'); rot.innerHTML='';
+  const d=document.createElement('div'); d.className='toast'; d.innerHTML=`<span>${esc(text)}</span>`;
+  if(val){const b=document.createElement('button');b.textContent=val.knapp;b.onclick=()=>{rot.innerHTML='';val.gor();};d.appendChild(b);}
+  rot.appendChild(d); clearTimeout(toastTimer); toastTimer=setTimeout(()=>rot.innerHTML='',val?6000:3000);
+}
+let modalSpara=null;
+function modal({titel,kropp,sparaText='Spara',onSpara,extra}){
+  modalSpara=onSpara;
+  $('#modalRot').innerHTML=`<div class="skugga" id="skugga"><div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-topp"><h3>${esc(titel)}</h3><button class="stang" onclick="stangModal()" aria-label="Stäng">×</button></div>
+    <div class="modal-kropp" id="modalKropp">${kropp}</div>
+    <div class="modal-fot">${extra||''}<button class="knapp" onclick="stangModal()">Avbryt</button>
+    ${onSpara?`<button class="knapp primar" onclick="modalSpara&&modalSpara()">${esc(sparaText)}</button>`:''}</div>
+  </div></div>`;
+  $('#skugga').addEventListener('mousedown',e=>{if(e.target.id==='skugga')stangModal();});
+  const f=$('#modalKropp').querySelector('input,select,textarea'); if(f&&window.innerWidth>640)f.focus();
+}
+function stangModal(){$('#modalRot').innerHTML='';modalSpara=null;}
+const v=n=>{const e=document.getElementById(n);return e?e.value.trim():'';};
+const vn=n=>num(v(n));
+const vb=n=>{const e=document.getElementById(n);return e?e.checked:false;};
+
+/* ==========================================================================
+   EKONOMI
+   ========================================================================== */
+function raknaRader(rader,rabattProc,rutPa){
+  const st=S.installningar, ms=st.moms/100;
+  let arbete=0, ovrigt=0;
+  (rader||[]).forEach(r=>{const s=num(r.antal)*num(r.pris); r.rut?arbete+=s:ovrigt+=s;});
+  const rab=(num(rabattProc)||0)/100;
+  arbete*=(1-rab); ovrigt*=(1-rab);
+  const netto=arbete+ovrigt, moms=netto*ms, brutto=netto+moms, arbeteBrutto=arbete*(1+ms);
+  let rut=0; if(rutPa)rut=Math.min(arbeteBrutto*(st.rutProcent/100), st.rutTak);
+  return {arbete,ovrigt,netto,moms,brutto,rut,attBetala:brutto-rut};
+}
+
+/* ---------- Pass-statistik ---------- */
+function passTimmar(p){
+  const a=minuter(p.start), b=minuter(p.slut);
+  if(a===null||b===null||b<=a)return 0;
+  return (b-a)/60;
+}
+function passOfferter(p){return S.offerter.filter(o=>o.passId===p.id);}
+function passStat(p){
+  const tim=passTimmar(p);
+  if(p.typ==='salj'){
+    const off=passOfferter(p);
+    const vunna=off.filter(o=>o.status==='accepterad');
+    const franOffert=vunna.reduce((s,o)=>s+raknaRader(o.rader,o.rabatt,o.rut).netto,0);
+    const manuellt=num(p.saltBelopp);
+    const salt=franOffert+manuellt;
+    const dorrar=num(p.dorrar), oppnade=num(p.oppnade);
+    return {typ:'salj',tim,salt,franOffert,manuellt,dorrar,oppnade,
+      offerter:num(p.offerter)+off.length, offertLagda:off.length, vunna:vunna.length,
+      krDorr:dorrar?salt/dorrar:0, krOppnad:oppnade?salt/oppnade:0,
+      oppningsgrad:proc(oppnade,dorrar), timlon:tim?salt/tim:0, dorrPerTim:tim?dorrar/tim:0};
+  }
+  if(p.typ==='jobb'){
+    const intakt=(p.jobb||[]).reduce((s,j)=>s+num(j.belopp),0);
+    return {typ:'jobb',tim,intakt,antal:(p.jobb||[]).length,
+      klara:(p.jobb||[]).filter(j=>j.klar).length, timlon:tim?intakt/tim:0};
+  }
+  return {typ:'ovrigt',tim};
+}
+function passISpann(f,t){return S.schema.filter(p=>p.datum>=f&&p.datum<=t);}
+function spannFor(p){
+  const nu=new Date();
+  if(p==='vecka')return{f:ymd(ANKARE),t:ymd(plusDagar(ANKARE,6)),namn:'Vecka '+veckoNr(ANKARE)};
+  if(p==='manad'){const a=new Date(nu.getFullYear(),nu.getMonth(),1),b=new Date(nu.getFullYear(),nu.getMonth()+1,0);
+    return{f:ymd(a),t:ymd(b),namn:MAN[nu.getMonth()]};}
+  if(p==='ar')return{f:nu.getFullYear()+'-01-01',t:nu.getFullYear()+'-12-31',namn:String(nu.getFullYear())};
+  return{f:'0000-01-01',t:'9999-12-31',namn:'Hela tiden'};
+}
+function samlaStat(f,t){
+  const pass=passISpann(f,t);
+  const salj=pass.filter(p=>p.typ==='salj').map(p=>({p,s:passStat(p)}));
+  const jobb=pass.filter(p=>p.typ==='jobb').map(p=>({p,s:passStat(p)}));
+  const sum=(a,k)=>a.reduce((x,y)=>x+y.s[k],0);
+  const saljTim=sum(salj,'tim'), jobbTim=sum(jobb,'tim');
+  const salt=sum(salj,'salt'), intakt=sum(jobb,'intakt');
+  const dorrar=sum(salj,'dorrar'), oppnade=sum(salj,'oppnade'), offerter=sum(salj,'offerter');
+  const off=S.offerter.filter(o=>o.datum>=f&&o.datum<=t);
+  const acc=off.filter(o=>o.status==='accepterad');
+  return {pass,salj,jobb,saljTim,jobbTim,salt,intakt,dorrar,oppnade,offerter,
+    krDorr:dorrar?salt/dorrar:0, krOppnad:oppnade?salt/oppnade:0, oppningsgrad:proc(oppnade,dorrar),
+    timlonSalj:saljTim?salt/saljTim:0, timlonJobb:jobbTim?intakt/jobbTim:0,
+    dorrPerTim:saljTim?dorrar/saljTim:0,
+    offertVarde:off.reduce((s,o)=>s+raknaRader(o.rader,o.rabatt,o.rut).brutto,0),
+    accVarde:acc.reduce((s,o)=>s+raknaRader(o.rader,o.rabatt,o.rut).brutto,0),
+    antalOfferter:off.length, antalVunna:acc.length,
+    total:salt+intakt, totalTim:saljTim+jobbTim};
+}
+function ekonomi(){
+  const ob=S.fakturor.filter(f=>f.status!=='betald'&&f.status!=='utkast'&&f.status!=='krediterad');
+  const idag=ymd(new Date());
+  return {
+    obetalt:ob.reduce((s,f)=>s+raknaRader(f.rader,f.rabatt,f.rut).attBetala,0), obetaltAntal:ob.length,
+    forfallna:ob.filter(f=>f.forfall<idag),
+    pipeline:S.offerter.filter(o=>o.status==='skickad').reduce((s,o)=>s+raknaRader(o.rader,o.rabatt,o.rut).brutto,0),
+    pipelineAntal:S.offerter.filter(o=>o.status==='skickad').length,
+    betaltIar:S.fakturor.filter(f=>f.status==='betald'&&(f.betaldDatum||f.datum).startsWith(String(new Date().getFullYear())))
+      .reduce((s,f)=>s+raknaRader(f.rader,f.rabatt,f.rut).brutto,0)
+  };
+}
+const kund=k=>S.kunder.find(x=>x.id===k);
+const kundNamn=k=>{const c=kund(k);return c?c.namn:'—';};
+
+/* ==========================================================================
+   RITNING
+   ========================================================================== */
+const FLIKAR=[['oversikt','Översikt'],['schema','Schema'],['salj','Sälj'],['jobb','Jobb'],['kunder','Kunder'],
+  ['offerter','Offerter'],['fakturor','Fakturor'],['nyckeltal','Nyckeltal'],['mal','Mål'],['installningar','Inställningar']];
+function rita(){
+  $('#flikar').innerHTML=FLIKAR.map(([k,n])=>`<button class="flik" role="tab" aria-selected="${VY===k}" onclick="byt('${k}')">${n}</button>`).join('');
+  const i=new Date();
+  $('#toppSub').textContent='v'+veckoNr(i)+' · '+i.toLocaleDateString('sv-SE',{weekday:'long',day:'numeric',month:'long'});
+  const vyer={oversikt:vyOversikt,schema:vySchema,salj:vySalj,jobb:vyJobb,kunder:vyKunder,offerter:vyOfferter,
+    fakturor:vyFakturor,nyckeltal:vyNyckeltal,mal:vyMal,installningar:vyInstallningar};
+  $('#app').innerHTML=vyer[VY]();
+  if(VY==='schema'&&schemaLage==='rutnat')rullaTillArbetstid();
+  window.scrollTo({top:0});
+}
+function byt(k){VY=k;sok='';rita();}
+function matare(namn,varde,mal,fmt){
+  const p=mal>0?Math.min(varde/mal*100,100):0, klar=mal>0&&varde>=mal, f=fmt||(n=>nf.format(n));
+  return `<div class="matare"><div class="matare-topp"><span class="matare-namn">${namn}</span>
+    <span class="matare-tal">${f(varde)}<i> / ${f(mal)}</i></span></div>
+    <div class="matare-spar"><div class="matare-fyll ${klar?'full':''}" style="width:${p}%"></div></div>
+    <div class="matare-fot"><span>${Math.round(p)}%</span><span>${klar?'MÅL NÅTT':(mal-varde>0?f(mal-varde)+' kvar':'')}</span></div></div>`;
+}
+function stapel(namn,varde,max,farg,text){
+  return `<div class="stapelrad"><div class="namn">${namn}</div>
+    <div class="spar"><div class="fyll" style="width:${max?Math.min(varde/max*100,100):0}%;background:${farg}"></div></div>
+    <div class="varde">${text}</div></div>`;
+}
+
+/* ---------- Översikt ---------- */
+function vyOversikt(){
+  const st=samlaStat(ymd(ANKARE),ymd(plusDagar(ANKARE,6))), ek=ekonomi(), m=S.mal.vecka;
+  const idagS=ymd(new Date());
+  const komm=S.schema.filter(p=>p.datum>=idagS&&!p.klar).sort((a,b)=>(a.datum+(a.start||'')).localeCompare(b.datum+(b.start||''))).slice(0,5);
+  const maxTim=Math.max(st.timlonSalj,st.timlonJobb,m.timlonSalj,m.timlonJobb,1);
+  return `
+  <div class="kort">
+    <div class="kort-topp"><h2>Vecka ${veckoNr(ANKARE)}</h2>
+      <span class="hnt">${datumText(ymd(ANKARE))} – ${datumText(ymd(plusDagar(ANKARE,6)))}</span></div>
+    <div class="tal-rutnat">
+      <div class="tal stor accent"><b>${kr(st.krDorr)}</b><span>Per knackad dörr</span><i>${nf.format(st.dorrar)} dörrar</i></div>
+      <div class="tal stor gron"><b>${kr(st.total)}</b><span>Inarbetat</span><i>sälj ${kr(st.salt)} · jobb ${kr(st.intakt)}</i></div>
+      <div class="tal"><b>${kr(st.timlonSalj)}</b><span>Timme sälj</span><i>${nf1.format(st.saljTim)} h</i></div>
+      <div class="tal"><b>${kr(st.timlonJobb)}</b><span>Timme jobb</span><i>${nf1.format(st.jobbTim)} h</i></div>
+    </div>
+    <div class="knappar" style="margin-top:12px">
+      <button class="knapp liten" onclick="ANKARE=plusDagar(ANKARE,-7);rita()">← Förra</button>
+      <button class="knapp liten" onclick="ANKARE=mandag(new Date());rita()">Denna vecka</button>
+      <button class="knapp liten" onclick="ANKARE=plusDagar(ANKARE,7);rita()">Nästa →</button>
+    </div>
+  </div>
+
+  <div class="rutnat tva">
+    <div class="kort">
+      <div class="kort-topp"><h2>Veckans mål</h2><button class="knapp liten" style="margin-left:auto" onclick="byt('mal')">Ändra</button></div>
+      ${matare('Dörrar',st.dorrar,m.dorrar)}
+      ${matare('Offerter ut',st.offerter,m.offerter)}
+      ${matare('Sålt för',st.salt,m.salt,n=>nf.format(n)+' kr')}
+      ${matare('Timlön sälj',st.timlonSalj,m.timlonSalj,n=>nf.format(n)+' kr')}
+    </div>
+    <div class="kort">
+      <div class="kort-topp"><h2>Näst på tur</h2><button class="knapp liten" style="margin-left:auto" onclick="byt('schema')">Schema</button></div>
+      ${komm.length?komm.map(p=>`<div class="post" onclick="passModal('${p.id}')">
+        <div class="strimma ${p.typ}" style="min-height:36px"></div>
+        <div><div class="post-huvud">${esc(p.titel)}</div>
+        <div class="post-meta">${DAGAR_K[(parseYmd(p.datum).getDay()+6)%7]} ${datumText(p.datum)}${p.start?' · '+p.start:''}${p.plats?' · '+esc(p.plats):''}</div></div>
+      </div>`).join(''):`<div class="tom"><h3>Inget inbokat</h3><p>Lägg in säljpass och jobb i schemat.</p>
+        <button class="knapp primar" onclick="byt('schema')">Öppna schemat</button></div>`}
+    </div>
+  </div>
+
+  <div class="kort">
+    <div class="kort-topp"><h2>Vad timmen ger</h2><span class="hnt">exkl. moms</span></div>
+    ${stapel('Sälj',st.timlonSalj,maxTim,'var(--accent)',kr(st.timlonSalj)+'/h')}
+    ${stapel('Jobb',st.timlonJobb,maxTim,'var(--gron)',kr(st.timlonJobb)+'/h')}
+    ${stapel('Allt ihop',st.totalTim?st.total/st.totalTim:0,maxTim,'var(--accent2)',kr(st.totalTim?st.total/st.totalTim:0)+'/h')}
+  </div>
+
+  <div class="kort">
+    <div class="kort-topp"><h2>Pengarna</h2></div>
+    <div class="tal-rutnat">
+      <div class="tal accent"><b>${kr(ek.pipeline)}</b><span>Ute i offert</span><i>${ek.pipelineAntal} st</i></div>
+      <div class="tal varn"><b>${kr(ek.obetalt)}</b><span>Obetalda fakturor</span><i>${ek.obetaltAntal} st</i></div>
+      <div class="tal gron"><b>${kr(ek.betaltIar)}</b><span>Betalt i år</span></div>
+      <div class="tal"><b>${proc(st.antalVunna,st.antalOfferter)}%</b><span>Vunna offerter</span><i>${st.antalVunna}/${st.antalOfferter} i veckan</i></div>
+    </div>
+    ${ek.forfallna.length?`<div style="margin-top:11px;border:1px solid var(--rod);border-radius:8px;padding:10px;font-size:14px">
+      <b>${ek.forfallna.length} faktura${ek.forfallna.length>1?'r':''} över förfallodatum.</b>
+      <a href="#" onclick="byt('fakturor');return false">Öppna fakturor</a></div>`:''}
+  </div>
+
+  <div class="kort">
+    <div class="kort-topp"><h2>Snabbt</h2></div>
+    <div class="knappar">
+      <button class="knapp primar" onclick="byt('salj')">Räkna dörrar</button>
+      <button class="knapp" onclick="passModal(null,null,'jobb')">Boka jobb</button>
+      <button class="knapp" onclick="offertModal()">Ny offert</button>
+      <button class="knapp" onclick="fakturaModal()">Ny faktura</button>
+      <button class="knapp" onclick="kundModal()">Ny kund</button>
+      <button class="knapp" onclick="kalkylModal()">Räkna pris</button>
+    </div>
+  </div>`;
+}
+
+/* ==========================================================================
+   SCHEMA — rutnät och lista
+   ========================================================================== */
+function vySchema(){
+  const st=samlaStat(ymd(ANKARE),ymd(plusDagar(ANKARE,6)));
+  return `
+  <div class="kort-topp" style="margin-bottom:12px">
+    <button class="knapp liten" onclick="ANKARE=plusDagar(ANKARE,-7);rita()">←</button>
+    <h2>Vecka ${veckoNr(ANKARE)}</h2>
+    <button class="knapp liten" onclick="ANKARE=plusDagar(ANKARE,7);rita()">→</button>
+    <button class="knapp liten" onclick="ANKARE=mandag(new Date());rita()">Idag</button>
+    <div class="valjare" style="margin-left:auto">
+      <button aria-pressed="${schemaLage==='rutnat'}" onclick="schemaLage='rutnat';rita()">Rutnät</button>
+      <button aria-pressed="${schemaLage==='lista'}" onclick="schemaLage='lista';rita()">Lista</button>
+    </div>
+    <button class="knapp liten primar" onclick="passModal()">+ Pass</button>
+  </div>
+  <div class="tal-rutnat" style="margin-bottom:12px">
+    <div class="tal accent"><b>${st.salj.length}</b><span>Säljpass</span><i>${nf1.format(st.saljTim)} h</i></div>
+    <div class="tal gron"><b>${st.jobb.length}</b><span>Jobbpass</span><i>${nf1.format(st.jobbTim)} h · ${st.jobb.reduce((s,x)=>s+x.s.antal,0)} jobb</i></div>
+    <div class="tal"><b>${nf1.format(st.totalTim)} h</b><span>Bokat i veckan</span></div>
+    <div class="tal"><b>${st.pass.filter(p=>p.klar).length}/${st.pass.length}</b><span>Avbockat</span></div>
+  </div>
+  ${schemaLage==='rutnat'?schemaRutnat():schemaLista()}`;
+}
+
+function schemaRutnat(){
+  const st=S.installningar;
+  const veckoPass=passISpann(ymd(ANKARE),ymd(plusDagar(ANKARE,6)));
+  let fran=st.schemaStart, till=st.schemaSlut;
+  veckoPass.forEach(p=>{const a=minuter(p.start),b=minuter(p.slut);
+    if(a!==null)fran=Math.min(fran,Math.floor(a/60)); if(b!==null)till=Math.max(till,Math.ceil(b/60));});
+  fran=Math.max(0,fran); till=Math.min(24,Math.max(till,fran+4));
+  const timmar=[]; for(let h=fran;h<till;h++)timmar.push(h);
+  const idagS=ymd(new Date());
+
+  const heldag=veckoPass.filter(p=>minuter(p.start)===null);
+  const rubriker=[0,1,2,3,4,5,6].map(i=>{const d=plusDagar(ANKARE,i);
+    return `<div class="${ymd(d)===idagS?'idag':''}"><div class="dnamn">${DAGAR_K[i]}</div><div class="dnr">${d.getDate()}</div></div>`;}).join('');
+
+  const kolumner=[0,1,2,3,4,5,6].map(i=>{
+    const dS=ymd(plusDagar(ANKARE,i));
+    const pass=veckoPass.filter(p=>p.datum===dS&&minuter(p.start)!==null)
+      .sort((a,b)=>minuter(a.start)-minuter(b.start));
+    const blk=pass.map((p,ix)=>{
+      const a=minuter(p.start), b=minuter(p.slut)||a+60;
+      const top=(a-fran*60)/60*46, hojd=Math.max((b-a)/60*46-3,22);
+      const krock=pass.filter((q,qi)=>qi<ix&&minuter(q.slut||'23:59')>a).length;
+      const s=passStat(p);
+      const rad2=p.typ==='salj'?`${p.dorrar||0} dörrar`:p.typ==='jobb'?`${(p.jobb||[]).length} jobb`:'';
+      return `<div class="blk ${p.typ} ${p.klar?'klar':''}" style="top:${top}px;height:${hojd}px;left:${2+krock*8}px"
+        onclick="passModal('${p.id}')" title="${esc(p.titel)}">
+        <b>${esc(p.titel)}</b><span>${p.start}–${p.slut||''}</span>${hojd>52&&rad2?`<span>${rad2}</span>`:''}</div>`;
+    }).join('');
+    return `<div class="rutkolumn ${i>4?'helg':''}" onclick="if(event.target===this)passModal(null,'${dS}')">${blk}</div>`;
+  }).join('');
+
+  return `<div class="schemaram">
+    ${heldag.length?`<div class="heldag"><span class="etikett" style="align-self:center">Utan tid:</span>
+      ${heldag.map(p=>`<button class="chip" onclick="passModal('${p.id}')">${esc(p.titel)} · ${DAGAR_K[(parseYmd(p.datum).getDay()+6)%7]}</button>`).join('')}</div>`:''}
+    <div class="schemarull" id="schemaRull"><div class="schemainre">
+      <div class="rutrad rutrubrik"><div></div>${rubriker}</div>
+      <div class="rutrad rutkropp" style="height:${timmar.length*46}px">
+        <div class="ruttider">${timmar.map(h=>`<div class="ruttid">${String(h).padStart(2,'0')}</div>`).join('')}</div>
+        ${kolumner}
+      </div>
+    </div></div>
+  </div>
+  <p style="font-size:13px;color:var(--dov);margin-top:9px">Tryck i en tom ruta för att lägga in ett pass den dagen. Tryck på ett block för att ändra det.</p>`;
+}
+function rullaTillArbetstid(){
+  const r=$('#schemaRull'); if(!r)return;
+  const idagIx=(new Date().getDay()+6)%7;
+  if(idagIx>2)r.scrollLeft=(r.scrollWidth-r.clientWidth);
+}
+
+function schemaLista(){
+  const idagS=ymd(new Date());
+  return [0,1,2,3,4,5,6].map(i=>{
+    const d=plusDagar(ANKARE,i), s=ymd(d);
+    const pass=S.schema.filter(p=>p.datum===s).sort((a,b)=>(a.start||'99').localeCompare(b.start||'99'));
+    return `<div class="dagkort ${s===idagS?'idag':''}">
+      <div class="dagkort-topp"><b>${DAGAR[i]}</b><span>${d.getDate()} ${MAN[d.getMonth()].slice(0,3)}</span>
+        <button class="knapp liten" style="margin-left:auto" onclick="passModal(null,'${s}')">+ Pass</button></div>
+      ${pass.length?pass.map(p=>passRad(p)).join(''):`<div style="padding:12px 13px;color:var(--dov);font-size:14px">Ledigt</div>`}
+    </div>`;}).join('');
+}
+function passRad(p){
+  const s=passStat(p);
+  let stat='';
+  if(p.typ==='salj')stat=`<div class="pass-stat"><span><b>${s.dorrar}</b> dörrar</span><span><b>${s.oppnade}</b> öppnade</span>
+    <span><b>${s.offerter}</b> offerter</span><span><b>${kr(s.salt)}</b> sålt</span>
+    ${s.tim?`<span><b>${kr(s.timlon)}</b>/h</span><span><b>${kr(s.krDorr)}</b>/dörr</span>`:''}</div>`;
+  if(p.typ==='jobb')stat=`<div class="pass-stat"><span><b>${s.antal}</b> jobb</span><span><b>${kr(s.intakt)}</b></span>
+    ${s.tim?`<span><b>${kr(s.timlon)}</b>/h</span>`:''}<span>${s.klara}/${s.antal} klara</span></div>`;
+  return `<div class="pass ${p.klar?'klar':''}" onclick="passModal('${p.id}')">
+    <div class="strimma ${p.typ}"></div>
+    <div class="pass-tid">${p.start||'—'}${p.slut?'<br>'+p.slut:''}</div>
+    <div style="flex:1;min-width:0"><div class="pass-titel">${esc(p.titel)}</div>
+      <div class="post-meta">${p.plats?esc(p.plats):p.kundId?esc(kundNamn(p.kundId)):''}</div>${stat}</div>
+    <button class="knapp liten ${p.klar?'':'primar'}" onclick="event.stopPropagation();klarPass('${p.id}')">${p.klar?'Klar':'Bocka'}</button>
+  </div>`;
+}
+function klarPass(pid){
+  const p=S.schema.find(x=>x.id===pid);
+  andra((p.klar?'Ångrade bock på ':'Bockade av ')+p.titel,s=>{s.schema.find(x=>x.id===pid).klar=!p.klar;});
+}
+
+/* ---------- Passmodal ---------- */
+let jobbRader=[];
+function passModal(pid,datum,typ){
+  const p=pid?S.schema.find(x=>x.id===pid):{datum:datum||ymd(new Date()),typ:typ||'salj',start:'09:00',slut:'15:00',
+    titel:'',plats:'',kundId:'',notering:'',klar:false,jobb:[],dorrar:0,oppnade:0,samtal:0,offerter:0,saltBelopp:0};
+  jobbRader=klon(p.jobb||[]);
+  const s=pid?passStat(p):null;
+  modal({titel:pid?'Pass · '+p.titel:'Nytt pass',
+    kropp:`
+    <div class="falt"><label>Typ av pass</label><select id="pTyp" onchange="passTypBytt(this.value)">
+      <option value="salj" ${p.typ==='salj'?'selected':''}>Sälj — knacka dörr</option>
+      <option value="jobb" ${p.typ==='jobb'?'selected':''}>Jobb — tvätta</option>
+      <option value="ovrigt" ${p.typ==='ovrigt'?'selected':''}>Övrigt</option></select></div>
+    <div class="falt"><label>Rubrik</label><input id="pTitel" value="${esc(p.titel)}" placeholder="t.ex. Villaområdet i Tumba"></div>
+    <div class="falt-rad tre">
+      <div class="falt"><label>Datum</label><input id="pDatum" type="date" value="${p.datum}"></div>
+      <div class="falt"><label>Start</label><input id="pStart" type="time" value="${p.start||''}"></div>
+      <div class="falt"><label>Slut</label><input id="pSlut" type="time" value="${p.slut||''}"></div>
+    </div>
+    <div class="falt"><label>Plats / område</label><input id="pPlats" value="${esc(p.plats||'')}"></div>
+
+    <div id="saljDel" style="display:${p.typ==='salj'?'block':'none'}">
+      <div class="etikett" style="margin:16px 0 8px">Utfall för passet</div>
+      <div class="falt-rad tre">
+        <div class="falt"><label>Dörrar knackade</label><input id="pDorrar" type="number" value="${p.dorrar||0}"></div>
+        <div class="falt"><label>Öppnade</label><input id="pOppnade" type="number" value="${p.oppnade||0}"></div>
+        <div class="falt"><label>Offerter på plats</label><input id="pOfferter" type="number" value="${p.offerter||0}"></div>
+      </div>
+      <div class="falt"><label>Sålt för under passet, kr exkl. moms</label><input id="pSalt" type="number" value="${p.saltBelopp||0}">
+        ${s&&s.franOffert?`<div style="font-size:12px;color:var(--dov);margin-top:5px">
+          Utöver detta räknas ${kr(s.franOffert)} från ${s.offertLagda} kopplade offert(er) som du markerat accepterade.</div>`:
+          `<div style="font-size:12px;color:var(--dov);margin-top:5px">Lägger du in offerter och kopplar dem till passet räknas de in automatiskt när de accepteras.</div>`}
+      </div>
+    </div>
+
+    <div id="jobbDel" style="display:${p.typ==='jobb'?'block':'none'}">
+      <div class="etikett" style="margin:16px 0 8px">Jobb under passet</div>
+      <div id="jobbLista"></div>
+      <div class="knappar" style="margin-top:8px">
+        <button class="knapp liten" onclick="nyttJobb()">+ Jobb</button>
+        <select onchange="jobbFranPrislista(this.value);this.value=''" style="padding:6px 9px;border:1px solid var(--linje);border-radius:8px;background:var(--yta2);color:var(--text)">
+          <option value="">+ Från prislistan…</option>
+          ${S.installningar.prislista.map(x=>`<option value="${x.id}">${esc(x.namn)}</option>`).join('')}
+        </select>
+      </div>
+      <div id="jobbSumma"></div>
+    </div>
+
+    <div class="falt" style="margin-top:14px"><label>Kund (om passet gäller en)</label><select id="pKund"><option value="">— ingen —</option>
+      ${S.kunder.map(k=>`<option value="${k.id}" ${p.kundId===k.id?'selected':''}>${esc(k.namn)}</option>`).join('')}</select></div>
+    <div class="falt"><label>Anteckning</label><textarea id="pNot">${esc(p.notering||'')}</textarea></div>
+    <div class="falt kryss"><input type="checkbox" id="pKlar" ${p.klar?'checked':''}><label style="margin:0">Passet är avklarat</label></div>
+
+    ${pid&&s.tim?`<div class="etikett" style="margin:16px 0 8px">Vad passet gav</div>
+      <div class="tal-rutnat">
+        ${p.typ==='salj'?`
+          <div class="tal accent"><b>${kr(s.timlon)}</b><span>Per timme</span><i>${nf1.format(s.tim)} h</i></div>
+          <div class="tal"><b>${kr(s.krDorr)}</b><span>Per dörr</span><i>alla dörrar</i></div>
+          <div class="tal"><b>${kr(s.krOppnad)}</b><span>Per öppnad dörr</span></div>
+          <div class="tal"><b>${s.oppningsgrad}%</b><span>Öppnade</span><i>${nf1.format(s.dorrPerTim)} dörrar/h</i></div>`:
+        p.typ==='jobb'?`
+          <div class="tal gron"><b>${kr(s.timlon)}</b><span>Per timme</span><i>${nf1.format(s.tim)} h</i></div>
+          <div class="tal"><b>${kr(s.intakt)}</b><span>Intäkt exkl. moms</span></div>
+          <div class="tal"><b>${s.antal}</b><span>Jobb</span><i>${s.klara} klara</i></div>`:
+        `<div class="tal"><b>${nf1.format(s.tim)} h</b><span>Tid</span></div>`}
+      </div>`:''}`,
+    extra:pid?`<button class="knapp fara" onclick="taBort('schema','${pid}','passet')">Ta bort</button>`:'',
+    onSpara:()=>{
+      const t=v('pTyp');
+      const d={typ:t,titel:v('pTitel')||({salj:'Säljpass',jobb:'Jobbpass',ovrigt:'Pass'})[t],
+        datum:v('pDatum'),start:v('pStart'),slut:v('pSlut'),plats:v('pPlats'),kundId:v('pKund'),
+        notering:v('pNot'),klar:vb('pKlar'),
+        dorrar:t==='salj'?vn('pDorrar'):0, oppnade:t==='salj'?vn('pOppnade'):0,
+        samtal:t==='salj'?vn('pOppnade'):0, offerter:t==='salj'?vn('pOfferter'):0,
+        saltBelopp:t==='salj'?vn('pSalt'):0,
+        jobb:t==='jobb'?klon(jobbRader):[]};
+      if(pid)andra('Ändrade passet',s=>Object.assign(s.schema.find(x=>x.id===pid),d));
+      else andra('La till pass',s=>s.schema.push({id:id(),...d}));
+      stangModal();
+    }});
+  ritaJobbRader();
+}
+function passTypBytt(t){
+  document.getElementById('saljDel').style.display=t==='salj'?'block':'none';
+  document.getElementById('jobbDel').style.display=t==='jobb'?'block':'none';
+}
+function nyttJobb(){jobbRader.push({id:id(),kundId:'',tjanst:'',belopp:0,klar:false});ritaJobbRader();}
+function jobbFranPrislista(pid){
+  const p=S.installningar.prislista.find(x=>x.id===pid); if(!p)return;
+  jobbRader.push({id:id(),kundId:'',tjanst:p.namn,belopp:0,klar:false}); ritaJobbRader();
+}
+function taJobb(i){jobbRader.splice(i,1);ritaJobbRader();}
+function ritaJobbRader(){
+  const e=document.getElementById('jobbLista'); if(!e)return;
+  e.innerHTML=jobbRader.length?`<table class="rad-tabell"><thead><tr>
+    <th style="width:32%">Kund</th><th style="width:30%">Tjänst</th><th style="width:22%">Belopp ex moms</th><th style="width:8%">Klar</th><th></th>
+    </tr></thead><tbody>${jobbRader.map((j,i)=>`<tr>
+      <td><select onchange="jobbRader[${i}].kundId=this.value"><option value="">— välj —</option>
+        ${S.kunder.map(k=>`<option value="${k.id}" ${j.kundId===k.id?'selected':''}>${esc(k.namn)}</option>`).join('')}</select></td>
+      <td><input value="${esc(j.tjanst)}" oninput="jobbRader[${i}].tjanst=this.value" placeholder="Taktvätt"></td>
+      <td><input type="number" value="${j.belopp}" oninput="jobbRader[${i}].belopp=num(this.value);jobbSumma()"></td>
+      <td style="text-align:center"><input type="checkbox" ${j.klar?'checked':''} onchange="jobbRader[${i}].klar=this.checked;jobbSumma()" style="width:auto"></td>
+      <td><button class="rad-bort" onclick="taJobb(${i})" aria-label="Ta bort jobbet">×</button></td></tr>`).join('')}</tbody></table>`
+    :`<p style="color:var(--dov);font-size:14px;margin:0">Inga jobb inlagda. Lägg till ett per kund du ska till under passet.</p>`;
+  jobbSumma();
+}
+function jobbSumma(){
+  const e=document.getElementById('jobbSumma'); if(!e)return;
+  const sum=jobbRader.reduce((s,j)=>s+num(j.belopp),0);
+  const a=minuter(v('pStart')), b=minuter(v('pSlut'));
+  const tim=(a!==null&&b!==null&&b>a)?(b-a)/60:0;
+  e.innerHTML=`<div class="summa"><div class="summa-rad"><span>Intäkt exkl. moms</span><span>${kr(sum)}</span></div>
+    ${tim?`<div class="summa-rad"><span>Per timme (${nf1.format(tim)} h)</span><span>${kr(sum/tim)}</span></div>`:''}</div>`;
+}
+
+/* ==========================================================================
+   SÄLJ
+   ========================================================================== */
+let session={dorrar:0,oppnade:0,offerter:0,nej:0};
+function vySalj(){
+  const st=samlaStat(ymd(ANKARE),ymd(plusDagar(ANKARE,6)));
+  const allt=samlaStat('0000-01-01','9999-12-31');
+  const pass=[...S.schema.filter(p=>p.typ==='salj')].sort((a,b)=>b.datum.localeCompare(a.datum)).slice(0,30);
+  return `
+  <div class="kort">
+    <div class="kort-topp"><h2>Pågående runda</h2><span class="hnt">tryck för att räkna</span></div>
+    <div class="raknare">
+      ${[['dorrar','Dörrar'],['oppnade','Öppnade'],['offerter','Offerter'],['nej','Nej tack']].map(([k,n])=>`
+        <div class="rakna" onclick="bump('${k}',1)"><b id="r_${k}">${session[k]}</b><span>${n}</span>
+          <button class="rakna-minus" onclick="event.stopPropagation();bump('${k}',-1)">−1</button></div>`).join('')}
+    </div>
+    <div class="knappar" style="margin-top:12px">
+      <button class="knapp primar" onclick="sparaRunda()">Spara som säljpass</button>
+      <button class="knapp" onclick="session={dorrar:0,oppnade:0,offerter:0,nej:0};rita()">Nollställ</button>
+      <button class="knapp" onclick="passModal(null,null,'salj')">Lägg in i efterhand</button>
+    </div>
+  </div>
+
+  <div class="kort">
+    <div class="kort-topp"><h2>Vad dörrarna ger</h2><span class="hnt">hela tiden</span></div>
+    <div class="tal-rutnat">
+      <div class="tal stor accent"><b>${kr(allt.krDorr)}</b><span>Per knackad dörr</span><i>även de som inte öppnar</i></div>
+      <div class="tal stor"><b>${kr(allt.krOppnad)}</b><span>Per öppnad dörr</span></div>
+      <div class="tal"><b>${allt.oppningsgrad}%</b><span>Öppnar</span><i>${nf.format(allt.oppnade)}/${nf.format(allt.dorrar)}</i></div>
+      <div class="tal gron"><b>${kr(allt.timlonSalj)}</b><span>Timlön sälj</span><i>${nf1.format(allt.saljTim)} h totalt</i></div>
+    </div>
+    <p style="font-size:13px;color:var(--dov);margin:12px 0 0">
+      Varje dörr du knackar är värd ${kr(allt.krDorr)} i snitt — också de tysta. ${allt.dorrar?`Knackar du ${nf.format(Math.round(allt.dorrPerTim||0))} dörrar i timmen blir det ${kr(allt.timlonSalj)} per timme.`:''}
+    </p>
+  </div>
+
+  <div class="kort">
+    <div class="kort-topp"><h2>Denna vecka</h2></div>
+    ${matare('Dörrar',st.dorrar,S.mal.vecka.dorrar)}
+    ${matare('Offerter',st.offerter,S.mal.vecka.offerter)}
+    ${matare('Timlön sälj',st.timlonSalj,S.mal.vecka.timlonSalj,n=>nf.format(n)+' kr')}
+  </div>
+
+  <div class="kort">
+    <div class="kort-topp"><h2>Säljpass</h2><span class="hnt">${S.schema.filter(p=>p.typ==='salj').length} st</span></div>
+    ${pass.length?pass.map(p=>{const s=passStat(p);
+      return `<div class="post" onclick="passModal('${p.id}')">
+        <div style="min-width:0"><div class="post-huvud">${esc(p.titel)}</div>
+          <div class="post-meta">${datumText(p.datum)}${p.start?' · '+p.start+'–'+(p.slut||''):''} · ${s.dorrar} dörrar · ${s.oppnade} öppnade</div>
+          <div class="pass-stat"><span><b>${kr(s.krDorr)}</b>/dörr</span>${s.tim?`<span><b>${kr(s.timlon)}</b>/h</span>`:''}<span><b>${s.oppningsgrad}%</b> öppnade</span></div></div>
+        <div class="post-hoger"><div class="belopp">${kr(s.salt)}</div><div class="post-meta">sålt</div></div>
+      </div>`;}).join(''):`<div class="tom"><h3>Inga säljpass</h3><p>Räkna med knapparna ovan medan du går och spara rundan när du är klar.</p></div>`}
+  </div>`;
+}
+function bump(k,n){session[k]=Math.max(0,session[k]+n);const e=document.getElementById('r_'+k);if(e)e.textContent=session[k];}
+function sparaRunda(){
+  if(!session.dorrar&&!session.oppnade&&!session.offerter)return toast('Räknaren står på noll.');
+  const s=klon(session), nu=new Date();
+  const start=new Date(nu.getTime()-2*3600000);
+  const tid=d=>String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+  andra('Sparade säljpasset',x=>x.schema.push({id:id(),datum:ymd(nu),start:tid(start),slut:tid(nu),typ:'salj',
+    titel:'Säljrunda',plats:'',kundId:'',notering:'',klar:true,jobb:[],
+    dorrar:s.dorrar,oppnade:s.oppnade,samtal:s.oppnade,offerter:s.offerter,saltBelopp:0}));
+  session={dorrar:0,oppnade:0,offerter:0,nej:0}; rita();
+  toast('Sparat — öppna passet och justera tider och sålt belopp.');
+}
+
+/* ==========================================================================
+   JOBB
+   ========================================================================== */
+function vyJobb(){
+  const sp=spannFor(period), st=samlaStat(sp.f,sp.t);
+  const alla=[];
+  S.schema.filter(p=>p.typ==='jobb').forEach(p=>(p.jobb||[]).forEach(j=>alla.push({p,j})));
+  alla.sort((a,b)=>b.p.datum.localeCompare(a.p.datum));
+  const kommande=S.schema.filter(p=>p.typ==='jobb'&&p.datum>=ymd(new Date())).sort((a,b)=>a.datum.localeCompare(b.datum));
+  const snitt=alla.length?alla.reduce((s,x)=>s+num(x.j.belopp),0)/alla.length:0;
+  return `
+  <div class="kort-topp" style="margin-bottom:12px"><h2>Jobb</h2>
+    ${periodValjare()}
+    <button class="knapp liten primar" onclick="passModal(null,null,'jobb')">+ Jobbpass</button></div>
+  <div class="kort">
+    <div class="kort-topp"><h2>${esc(sp.namn)}</h2></div>
+    <div class="tal-rutnat">
+      <div class="tal stor gron"><b>${kr(st.timlonJobb)}</b><span>Timlön jobb</span><i>${nf1.format(st.jobbTim)} h</i></div>
+      <div class="tal stor"><b>${kr(st.intakt)}</b><span>Intäkt exkl. moms</span></div>
+      <div class="tal"><b>${st.jobb.reduce((s,x)=>s+x.s.antal,0)}</b><span>Jobb</span><i>${st.jobb.length} pass</i></div>
+      <div class="tal"><b>${kr(snitt)}</b><span>Snitt per jobb</span><i>hela tiden</i></div>
+    </div>
+  </div>
+  <div class="kort">
+    <div class="kort-topp"><h2>Inbokat framåt</h2><span class="hnt">${kommande.length} pass</span></div>
+    ${kommande.length?kommande.slice(0,10).map(p=>{const s=passStat(p);
+      return `<div class="post" onclick="passModal('${p.id}')">
+        <div class="strimma jobb" style="min-height:38px"></div>
+        <div style="min-width:0"><div class="post-huvud">${esc(p.titel)}</div>
+          <div class="post-meta">${DAGAR_K[(parseYmd(p.datum).getDay()+6)%7]} ${datumText(p.datum)}${p.start?' · '+p.start:''} · ${s.antal} jobb</div>
+          <div class="post-meta">${(p.jobb||[]).map(j=>esc(j.tjanst||'Jobb')+(j.kundId?' · '+esc(kundNamn(j.kundId)):'')).join(' | ')||'—'}</div></div>
+        <div class="post-hoger"><div class="belopp">${kr(s.intakt)}</div>${s.tim?`<div class="post-meta">${kr(s.timlon)}/h</div>`:''}</div>
+      </div>`;}).join(''):`<div class="tom"><h3>Inget inbokat</h3><p>Lägg upp ett jobbpass och fyll det med de jobb du ska köra den dagen.</p>
+        <button class="knapp primar" onclick="passModal(null,null,'jobb')">Boka jobbpass</button></div>`}
+  </div>
+  <div class="kort">
+    <div class="kort-topp"><h2>Alla jobb</h2><span class="hnt">${alla.length} st</span></div>
+    ${alla.length?alla.slice(0,40).map(({p,j})=>`<div class="post" onclick="passModal('${p.id}')">
+      <div style="min-width:0"><div class="post-huvud">${esc(j.tjanst||'Jobb')}</div>
+        <div class="post-meta">${j.kundId?esc(kundNamn(j.kundId))+' · ':''}${datumText(p.datum)}</div></div>
+      <div class="post-hoger"><div class="belopp">${kr(j.belopp)}</div>
+        <div class="post-meta"><span class="marke ${j.klar?'gron':''}">${j.klar?'Klart':'Ej klart'}</span></div></div>
+    </div>`).join(''):`<div class="tom"><h3>Inga jobb ännu</h3><p>Varje jobbpass kan innehålla hur många jobb som helst.</p></div>`}
+  </div>`;
+}
+function periodValjare(){
+  return `<div class="valjare" style="margin-left:auto">
+    ${[['vecka','Vecka'],['manad','Månad'],['ar','År'],['allt','Allt']].map(([k,n])=>
+      `<button aria-pressed="${period===k}" onclick="period='${k}';rita()">${n}</button>`).join('')}</div>`;
+}
+
+/* ==========================================================================
+   NYCKELTAL
+   ========================================================================== */
+function vyNyckeltal(){
+  const sp=spannFor(period), st=samlaStat(sp.f,sp.t);
+  const maxTim=Math.max(st.timlonSalj,st.timlonJobb,1);
+  const passLista=[...st.salj,...st.jobb].filter(x=>x.s.tim>0).sort((a,b)=>b.s.timlon-a.s.timlon);
+  return `
+  <div class="kort-topp" style="margin-bottom:12px"><h2>Nyckeltal</h2>${periodValjare()}</div>
+  <div class="kort">
+    <div class="kort-topp"><h2>${esc(sp.namn)}</h2><span class="hnt">alla belopp exkl. moms</span></div>
+    <div class="tal-rutnat">
+      <div class="tal stor accent"><b>${kr(st.krDorr)}</b><span>Per knackad dörr</span><i>${nf.format(st.dorrar)} dörrar</i></div>
+      <div class="tal stor"><b>${kr(st.krOppnad)}</b><span>Per öppnad dörr</span><i>${nf.format(st.oppnade)} öppnade</i></div>
+      <div class="tal"><b>${st.oppningsgrad}%</b><span>Öppnar dörren</span></div>
+      <div class="tal"><b>${proc(st.offerter,st.dorrar)}%</b><span>Offert per dörr</span><i>${st.offerter} offerter</i></div>
+      <div class="tal"><b>${proc(st.antalVunna,st.antalOfferter)}%</b><span>Vinstandel</span><i>${st.antalVunna}/${st.antalOfferter}</i></div>
+      <div class="tal"><b>${nf1.format(st.dorrPerTim)}</b><span>Dörrar per timme</span></div>
+    </div>
+  </div>
+  <div class="kort">
+    <div class="kort-topp"><h2>Vad timmen ger</h2></div>
+    ${stapel('Sälj',st.timlonSalj,maxTim,'var(--accent)',kr(st.timlonSalj)+'/h')}
+    ${stapel('Jobb',st.timlonJobb,maxTim,'var(--gron)',kr(st.timlonJobb)+'/h')}
+    <div class="tal-rutnat" style="margin-top:12px">
+      <div class="tal accent"><b>${kr(st.salt)}</b><span>Sålt på ${nf1.format(st.saljTim)} h</span></div>
+      <div class="tal gron"><b>${kr(st.intakt)}</b><span>Utfört på ${nf1.format(st.jobbTim)} h</span></div>
+      <div class="tal"><b>${kr(st.totalTim?st.total/st.totalTim:0)}</b><span>Snitt per arbetad timme</span><i>${nf1.format(st.totalTim)} h totalt</i></div>
+      <div class="tal"><b>${kr(st.total)}</b><span>Inarbetat totalt</span></div>
+    </div>
+    ${st.timlonSalj&&st.timlonJobb?`<p style="font-size:13px;color:var(--dov);margin:12px 0 0">
+      ${st.timlonSalj>st.timlonJobb
+        ? `En timme sälj ger ${kr(st.timlonSalj-st.timlonJobb)} mer än en timme tvätt. Vill du växa: lägg marginaltimmen på dörrarna, eller ta betalt mer för jobben.`
+        : `En timme tvätt ger ${kr(st.timlonJobb-st.timlonSalj)} mer än en timme sälj. Antingen behöver säljet fler dörrar per timme, eller så är priserna för låga i förhållande till hur länge du knackar.`}</p>`:''}
+  </div>
+  <div class="kort">
+    <div class="kort-topp"><h2>Pass rankade på timpeng</h2><span class="hnt">${passLista.length} pass med tid</span></div>
+    ${passLista.length?passLista.slice(0,20).map(({p,s})=>`<div class="post" onclick="passModal('${p.id}')">
+      <div class="strimma ${p.typ}" style="min-height:34px"></div>
+      <div style="min-width:0"><div class="post-huvud">${esc(p.titel)}</div>
+        <div class="post-meta">${datumText(p.datum)} · ${nf1.format(s.tim)} h · ${p.typ==='salj'?s.dorrar+' dörrar':s.antal+' jobb'}</div></div>
+      <div class="post-hoger"><div class="belopp" style="color:${p.typ==='salj'?'var(--accent)':'var(--gron)'}">${kr(s.timlon)}</div>
+        <div class="post-meta">per timme</div></div>
+    </div>`).join(''):`<div class="tom"><h3>Inga pass med tider</h3><p>Sätt start och sluttid på passen så räknas timpengen ut.</p></div>`}
+  </div>`;
+}
+
+/* ==========================================================================
+   KUNDER
+   ========================================================================== */
+const STATUS={lead:['Lead',''],offert:['Offert ute','accent'],bokad:['Bokad','accent'],utford:['Utfört','gron'],
+  fakturerad:['Fakturerad','varn'],betald:['Betald','gron'],forlorad:['Förlorad','rod']};
+function vyKunder(){
+  const q=sok.toLowerCase();
+  const lista=S.kunder.filter(k=>!q||[k.namn,k.adress,k.ort,k.tel,k.epost].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>(b.skapad||'').localeCompare(a.skapad||''));
+  return `<div class="kort-topp" style="margin-bottom:12px"><h2>Kunder</h2>
+    <button class="knapp liten primar" style="margin-left:auto" onclick="kundModal()">+ Ny kund</button></div>
+  <input class="sok" placeholder="Sök namn, adress, telefon…" value="${esc(sok)}" oninput="sok=this.value;ritaKundlista()">
+  <div class="kort" id="lista">${kundLista(lista)}</div>`;
+}
+function kundLista(lista){
+  if(!lista.length)return `<div class="tom"><h3>Inga kunder</h3><p>Varje dörr som säger ja hamnar här.</p>
+    <button class="knapp primar" onclick="kundModal()">Lägg till kund</button></div>`;
+  return lista.map(k=>{
+    const off=S.offerter.filter(o=>o.kundId===k.id);
+    const varde=off.filter(o=>o.status==='accepterad').reduce((s,o)=>s+raknaRader(o.rader,o.rabatt,o.rut).brutto,0);
+    const[t,f]=STATUS[k.status]||STATUS.lead;
+    return `<div class="post" onclick="kundModal('${k.id}')">
+      <div style="min-width:0"><div class="post-huvud">${esc(k.namn)}</div>
+        <div class="post-meta">${esc([k.adress,k.ort].filter(Boolean).join(', ')||'—')}</div>
+        <div style="margin-top:5px"><span class="marke ${f}">${t}</span></div></div>
+      <div class="post-hoger"><div class="belopp">${varde?kr(varde):''}</div>
+        <div class="post-meta">${off.length} offert${off.length===1?'':'er'}</div></div></div>`;}).join('');
+}
+function ritaKundlista(){
+  const q=sok.toLowerCase();
+  $('#lista').innerHTML=kundLista(S.kunder.filter(k=>!q||[k.namn,k.adress,k.ort,k.tel,k.epost].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>(b.skapad||'').localeCompare(a.skapad||'')));
+}
+function kundModal(kid){
+  const k=kid?kund(kid):{namn:'',adress:'',postnr:'',ort:'',tel:'',epost:'',personnr:'',fastighet:'',status:'lead',kalla:'dörr',notering:''};
+  modal({titel:kid?'Ändra kund':'Ny kund',
+    kropp:`<div class="falt"><label>Namn</label><input id="kNamn" value="${esc(k.namn)}"></div>
+    <div class="falt"><label>Adress</label><input id="kAdress" value="${esc(k.adress||'')}"></div>
+    <div class="falt-rad"><div class="falt"><label>Postnr</label><input id="kPost" value="${esc(k.postnr||'')}"></div>
+      <div class="falt"><label>Ort</label><input id="kOrt" value="${esc(k.ort||'')}"></div></div>
+    <div class="falt-rad"><div class="falt"><label>Telefon</label><input id="kTel" type="tel" value="${esc(k.tel||'')}"></div>
+      <div class="falt"><label>E-post</label><input id="kEpost" type="email" value="${esc(k.epost||'')}"></div></div>
+    <div class="falt-rad"><div class="falt"><label>Status</label><select id="kStatus">
+      ${Object.entries(STATUS).map(([kk,[t]])=>`<option value="${kk}" ${k.status===kk?'selected':''}>${t}</option>`).join('')}</select></div>
+      <div class="falt"><label>Kom in via</label><select id="kKalla">
+        ${['dörr','rekommendation','sociala medier','återkommande','annat'].map(x=>`<option ${k.kalla===x?'selected':''}>${x}</option>`).join('')}</select></div></div>
+    <div class="falt-rad"><div class="falt"><label>Personnummer (RUT)</label><input id="kPnr" value="${esc(k.personnr||'')}" placeholder="ÅÅÅÅMMDD-XXXX"></div>
+      <div class="falt"><label>Fastighetsbeteckning</label><input id="kFast" value="${esc(k.fastighet||'')}"></div></div>
+    <div class="falt"><label>Anteckningar</label><textarea id="kNot">${esc(k.notering||'')}</textarea></div>
+    ${kid?`<div class="knappar"><button class="knapp liten" onclick="stangModal();offertModal(null,'${kid}')">Ny offert</button>
+      ${k.tel?`<a class="knapp liten" href="tel:${esc(k.tel)}">Ring</a>`:''}</div>`:''}`,
+    extra:kid?`<button class="knapp fara" onclick="taBort('kunder','${kid}','kunden')">Ta bort</button>`:'',
+    onSpara:()=>{
+      if(!v('kNamn'))return toast('Kunden behöver ett namn.');
+      const d={namn:v('kNamn'),adress:v('kAdress'),postnr:v('kPost'),ort:v('kOrt'),tel:v('kTel'),epost:v('kEpost'),
+        status:v('kStatus'),kalla:v('kKalla'),personnr:v('kPnr'),fastighet:v('kFast'),notering:v('kNot')};
+      if(kid)andra('Ändrade '+d.namn,s=>Object.assign(s.kunder.find(x=>x.id===kid),d));
+      else andra('La till '+d.namn,s=>s.kunder.push({id:id(),skapad:new Date().toISOString(),...d}));
+      stangModal();
+    }});
+}
+
+/* ==========================================================================
+   RADER (offert/faktura)
+   ========================================================================== */
+let rader=[], radRut=true, radRabatt=0;
+function radTabell(){
+  return `<table class="rad-tabell"><thead><tr><th style="width:32%">Tjänst</th><th style="width:15%">Antal</th>
+    <th style="width:20%">À-pris</th><th style="width:9%">RUT</th><th style="width:18%;text-align:right">Summa</th><th></th></tr></thead>
+    <tbody id="radKropp">${rader.map((r,i)=>radRad(r,i)).join('')}</tbody></table>
+    <div class="knappar" style="margin-top:9px">
+      <button class="knapp liten" onclick="nyRad()">+ Rad</button>
+      <select onchange="franPrislista(this.value);this.value=''" style="padding:6px 9px;border:1px solid var(--linje);border-radius:8px;background:var(--yta2);color:var(--text)">
+        <option value="">+ Från prislistan…</option>
+        ${S.installningar.prislista.map(p=>`<option value="${p.id}">${esc(p.namn)} — ${p.pris} kr/${p.enhet}</option>`).join('')}</select>
+    </div>
+    <div class="falt-rad" style="margin-top:12px">
+      <div class="falt"><label>Rabatt %</label><input id="rRabatt" type="number" value="${radRabatt}" oninput="radRabatt=num(this.value);ritaSumma()"></div>
+      <div class="falt"><label>RUT-avdrag</label><div class="kryss" style="padding:9px 0">
+        <input type="checkbox" id="rRut" ${radRut?'checked':''} onchange="radRut=this.checked;ritaSumma()"><span>Dra av på arbetet</span></div></div>
+    </div><div id="summaRuta"></div>`;
+}
+function radRad(r,i){
+  return `<tr><td><input value="${esc(r.namn)}" oninput="rader[${i}].namn=this.value"></td>
+    <td><input type="number" step="any" value="${r.antal}" oninput="rader[${i}].antal=num(this.value);ritaSumma()"></td>
+    <td><input type="number" step="any" value="${r.pris}" oninput="rader[${i}].pris=num(this.value);ritaSumma()"></td>
+    <td style="text-align:center"><input type="checkbox" ${r.rut?'checked':''} onchange="rader[${i}].rut=this.checked;ritaSumma()" style="width:auto"></td>
+    <td class="kol-sum" id="radSum${i}">${nf.format(r.antal*r.pris)}</td>
+    <td><button class="rad-bort" onclick="taRad(${i})" aria-label="Ta bort raden">×</button></td></tr>`;
+}
+function nyRad(){rader.push({namn:'',antal:1,pris:0,rut:true,enhet:'st'});ritaRader();}
+function taRad(i){rader.splice(i,1);ritaRader();}
+function franPrislista(pid){const p=S.installningar.prislista.find(x=>x.id===pid);if(!p)return;
+  rader.push({namn:p.namn,antal:1,pris:p.pris,rut:p.rut,enhet:p.enhet});ritaRader();}
+function ritaRader(){const k=document.getElementById('radKropp');if(k){k.innerHTML=rader.map((r,i)=>radRad(r,i)).join('');ritaSumma();}}
+function ritaSumma(){
+  rader.forEach((r,i)=>{const e=document.getElementById('radSum'+i);if(e)e.textContent=nf.format(r.antal*r.pris);});
+  const b=raknaRader(rader,radRabatt,radRut), e=document.getElementById('summaRuta'); if(!e)return;
+  e.innerHTML=`<div class="summa">
+    <div class="summa-rad"><span>Arbete</span><span>${kr(b.arbete)}</span></div>
+    ${b.ovrigt?`<div class="summa-rad"><span>Material och övrigt</span><span>${kr(b.ovrigt)}</span></div>`:''}
+    <div class="summa-rad"><span>Moms ${S.installningar.moms}%</span><span>${kr(b.moms)}</span></div>
+    <div class="summa-rad"><span>Totalt inkl. moms</span><span>${kr(b.brutto)}</span></div>
+    ${b.rut?`<div class="summa-rad rut"><span>RUT-avdrag ${S.installningar.rutProcent}%</span><span>−${kr(b.rut)}</span></div>`:''}
+    <div class="summa-rad stor"><span>Kunden betalar</span><span>${kr(b.attBetala)}</span></div></div>`;
+}
+function kalkylModal(){
+  rader=[{namn:'Fasadtvätt',antal:120,pris:55,rut:true}]; radRut=true; radRabatt=0;
+  modal({titel:'Räkna pris',
+    kropp:`<p style="margin-top:0;color:var(--dov);font-size:14px">Räkna ihop ett pris utan att spara. Behåll det genom att göra en offert.</p>${radTabell()}`,
+    sparaText:'Gör till offert',
+    onSpara:()=>{const r=klon(rader),rt=radRut,rb=radRabatt;stangModal();offertModal(null,'',{rader:r,rut:rt,rabatt:rb});}});
+  ritaSumma();
+}
+
+/* ==========================================================================
+   OFFERTER
+   ========================================================================== */
+const O_STATUS={utkast:['Utkast',''],skickad:['Skickad','accent'],accepterad:['Accepterad','gron'],avvisad:['Avvisad','rod']};
+function vyOfferter(){
+  const lista=[...S.offerter].sort((a,b)=>b.datum.localeCompare(a.datum));
+  const ek=ekonomi();
+  const acc=S.offerter.filter(o=>o.status==='accepterad');
+  const skickade=S.offerter.filter(o=>o.status!=='utkast').length;
+  return `<div class="kort-topp" style="margin-bottom:12px"><h2>Offerter</h2>
+    <button class="knapp liten" style="margin-left:auto" onclick="kalkylModal()">Räkna pris</button>
+    <button class="knapp liten primar" onclick="offertModal()">+ Ny</button></div>
+  <div class="tal-rutnat" style="margin-bottom:12px">
+    <div class="tal accent"><b>${kr(ek.pipeline)}</b><span>Väntar svar</span><i>${ek.pipelineAntal} st</i></div>
+    <div class="tal gron"><b>${kr(acc.reduce((s,o)=>s+raknaRader(o.rader,o.rabatt,o.rut).brutto,0))}</b><span>Accepterat</span></div>
+    <div class="tal"><b>${proc(acc.length,skickade)}%</b><span>Vinstandel</span></div>
+    <div class="tal"><b>${S.offerter.length}</b><span>Totalt</span></div>
+  </div>
+  <div class="kort">${lista.length?lista.map(o=>{
+    const b=raknaRader(o.rader,o.rabatt,o.rut), [t,f]=O_STATUS[o.status]||O_STATUS.utkast;
+    const p=o.passId?S.schema.find(x=>x.id===o.passId):null;
+    return `<div class="post" onclick="offertModal('${o.id}')">
+      <div style="min-width:0"><div class="post-huvud">${esc(kundNamn(o.kundId))}</div>
+        <div class="post-meta">Nr ${esc(String(o.nr))} · ${datumText(o.datum)}${p?' · från '+esc(p.titel):''}</div>
+        <div style="margin-top:5px"><span class="marke ${f}">${t}</span></div></div>
+      <div class="post-hoger"><div class="belopp">${kr(b.brutto)}</div>
+        <div class="post-meta">${b.rut?'kund '+kr(b.attBetala):'inkl. moms'}</div></div></div>`;}).join('')
+    :`<div class="tom"><h3>Inga offerter</h3><p>Ett pris på papper är skillnaden mellan ett samtal och ett jobb.</p>
+      <button class="knapp primar" onclick="offertModal()">Skapa offert</button></div>`}</div>`;
+}
+function offertModal(oid,forvaldKund,forifyllt){
+  const o=oid?S.offerter.find(x=>x.id===oid):{nr:S.installningar.nastaOffertNr,kundId:forvaldKund||'',datum:ymd(new Date()),
+    giltigTill:ymd(plusDagar(new Date(),S.installningar.offertGiltig)),
+    rader:forifyllt?forifyllt.rader:[{namn:'Fasadtvätt',antal:100,pris:55,rut:true}],
+    rut:forifyllt?forifyllt.rut:true,rabatt:forifyllt?forifyllt.rabatt:0,status:'utkast',notering:'',passId:''};
+  rader=klon(o.rader); radRut=o.rut; radRabatt=o.rabatt||0;
+  const saljpass=S.schema.filter(p=>p.typ==='salj').sort((a,b)=>b.datum.localeCompare(a.datum)).slice(0,25);
+  modal({titel:oid?'Offert '+o.nr:'Ny offert',
+    kropp:`<div class="falt"><label>Kund</label><select id="oKund"><option value="">— välj kund —</option>
+      ${S.kunder.map(k=>`<option value="${k.id}" ${o.kundId===k.id?'selected':''}>${esc(k.namn)}${k.ort?' · '+esc(k.ort):''}</option>`).join('')}</select></div>
+    <div class="falt-rad tre">
+      <div class="falt"><label>Offertnr</label><input id="oNr" value="${esc(String(o.nr))}"></div>
+      <div class="falt"><label>Datum</label><input id="oDatum" type="date" value="${o.datum}"></div>
+      <div class="falt"><label>Giltig till</label><input id="oGiltig" type="date" value="${o.giltigTill}"></div></div>
+    <div class="falt-rad">
+      <div class="falt"><label>Status</label><select id="oStatus">
+        ${Object.entries(O_STATUS).map(([k,[t]])=>`<option value="${k}" ${o.status===k?'selected':''}>${t}</option>`).join('')}</select></div>
+      <div class="falt"><label>Kom från säljpass</label><select id="oPass"><option value="">— inget —</option>
+        ${saljpass.map(p=>`<option value="${p.id}" ${o.passId===p.id?'selected':''}>${datumText(p.datum)} · ${esc(p.titel)}</option>`).join('')}</select></div></div>
+    <div class="etikett" style="margin:16px 0 7px">Rader</div>${radTabell()}
+    <div class="falt" style="margin-top:12px"><label>Text till kunden</label><textarea id="oNot">${esc(o.notering||'')}</textarea></div>`,
+    extra:oid?`<button class="knapp fara" onclick="taBort('offerter','${oid}','offerten')">Ta bort</button>
+      <button class="knapp" onclick="skrivUt('offert','${oid}')">Skriv ut</button>
+      <button class="knapp" onclick="offertTillFaktura('${oid}')">Fakturera</button>`:'',
+    onSpara:()=>{
+      if(!v('oKund'))return toast('Välj vilken kund offerten gäller.');
+      const d={kundId:v('oKund'),nr:v('oNr'),datum:v('oDatum'),giltigTill:v('oGiltig'),status:v('oStatus'),passId:v('oPass'),
+        rader:klon(rader),rut:radRut,rabatt:radRabatt,notering:v('oNot')};
+      if(oid)andra('Ändrade offert '+d.nr,s=>Object.assign(s.offerter.find(x=>x.id===oid),d));
+      else andra('Skapade offert '+d.nr,s=>{s.offerter.push({id:id(),...d});
+        if(String(d.nr)===String(s.installningar.nastaOffertNr))s.installningar.nastaOffertNr=num(d.nr)+1;
+        const k=s.kunder.find(x=>x.id===d.kundId); if(k&&k.status==='lead')k.status='offert';});
+      stangModal();
+    }});
+  ritaSumma();
+}
+function offertTillFaktura(oid){
+  const o=S.offerter.find(x=>x.id===oid); stangModal();
+  fakturaModal(null,{kundId:o.kundId,rader:klon(o.rader),rut:o.rut,rabatt:o.rabatt,offertId:oid,notering:o.notering});
+}
+
+/* ==========================================================================
+   FAKTUROR
+   ========================================================================== */
+const F_STATUS={utkast:['Utkast',''],skickad:['Skickad','accent'],betald:['Betald','gron'],krediterad:['Krediterad','rod']};
+function vyFakturor(){
+  const idagS=ymd(new Date()), ek=ekonomi();
+  const lista=[...S.fakturor].sort((a,b)=>b.datum.localeCompare(a.datum));
+  return `<div class="kort-topp" style="margin-bottom:12px"><h2>Fakturor</h2>
+    <button class="knapp liten primar" style="margin-left:auto" onclick="fakturaModal()">+ Ny faktura</button></div>
+  <div class="tal-rutnat" style="margin-bottom:12px">
+    <div class="tal varn"><b>${kr(ek.obetalt)}</b><span>Väntar betalning</span><i>${ek.obetaltAntal} st</i></div>
+    <div class="tal ${ek.forfallna.length?'rod':''}"><b>${ek.forfallna.length}</b><span>Över förfallodatum</span></div>
+    <div class="tal gron"><b>${kr(ek.betaltIar)}</b><span>Betalt i år</span></div>
+    <div class="tal"><b>${S.fakturor.length}</b><span>Totalt</span></div>
+  </div>
+  <div class="kort">${lista.length?lista.map(f=>{
+    const b=raknaRader(f.rader,f.rabatt,f.rut); let[t,fa]=F_STATUS[f.status]||F_STATUS.utkast;
+    if(f.status==='skickad'&&f.forfall<idagS){t='Förfallen';fa='rod';}
+    return `<div class="post" onclick="fakturaModal('${f.id}')">
+      <div style="min-width:0"><div class="post-huvud">${esc(kundNamn(f.kundId))}</div>
+        <div class="post-meta">Faktura ${esc(String(f.nr))} · ${datumText(f.datum)} · förfaller ${datumText(f.forfall)}</div>
+        <div style="margin-top:5px"><span class="marke ${fa}">${t}</span></div></div>
+      <div class="post-hoger"><div class="belopp">${kr(b.attBetala)}</div>
+        <div class="post-meta">${b.rut?'efter RUT':'inkl. moms'}</div></div></div>`;}).join('')
+    :`<div class="tom"><h3>Inga fakturor</h3><p>Jobbet är inte klart förrän pengarna är inne.</p>
+      <button class="knapp primar" onclick="fakturaModal()">Skapa faktura</button></div>`}</div>`;
+}
+function fakturaModal(fid,fran){
+  const st=S.installningar;
+  const f=fid?S.fakturor.find(x=>x.id===fid):{nr:st.nastaFakturaNr,kundId:(fran&&fran.kundId)||'',datum:ymd(new Date()),
+    forfall:ymd(plusDagar(new Date(),st.betalvillkor)),rader:(fran&&fran.rader)||[{namn:'Fasadtvätt',antal:100,pris:55,rut:true}],
+    rut:fran?fran.rut:true,rabatt:(fran&&fran.rabatt)||0,status:'utkast',notering:(fran&&fran.notering)||'',
+    betaldDatum:'',offertId:(fran&&fran.offertId)||''};
+  rader=klon(f.rader); radRut=f.rut; radRabatt=f.rabatt||0;
+  modal({titel:fid?'Faktura '+f.nr:'Ny faktura',
+    kropp:`<div class="falt"><label>Kund</label><select id="fKund"><option value="">— välj kund —</option>
+      ${S.kunder.map(k=>`<option value="${k.id}" ${f.kundId===k.id?'selected':''}>${esc(k.namn)}</option>`).join('')}</select></div>
+    <div class="falt-rad tre">
+      <div class="falt"><label>Fakturanr</label><input id="fNr" value="${esc(String(f.nr))}"></div>
+      <div class="falt"><label>Fakturadatum</label><input id="fDatum" type="date" value="${f.datum}"></div>
+      <div class="falt"><label>Förfaller</label><input id="fForfall" type="date" value="${f.forfall}"></div></div>
+    <div class="falt-rad">
+      <div class="falt"><label>Status</label><select id="fStatus">
+        ${Object.entries(F_STATUS).map(([k,[t]])=>`<option value="${k}" ${f.status===k?'selected':''}>${t}</option>`).join('')}</select></div>
+      <div class="falt"><label>Betald den</label><input id="fBetald" type="date" value="${f.betaldDatum||''}"></div></div>
+    <div class="etikett" style="margin:16px 0 7px">Rader</div>${radTabell()}
+    <div class="falt" style="margin-top:12px"><label>Meddelande på fakturan</label><textarea id="fNot">${esc(f.notering||'')}</textarea></div>`,
+    extra:fid?`<button class="knapp fara" onclick="taBort('fakturor','${fid}','fakturan')">Ta bort</button>
+      <button class="knapp" onclick="skrivUt('faktura','${fid}')">Skriv ut / PDF</button>
+      <button class="knapp" onclick="mejlaFaktura('${fid}')">Mejla</button>`:'',
+    onSpara:()=>{
+      if(!v('fKund'))return toast('Välj vilken kund fakturan gäller.');
+      const d={kundId:v('fKund'),nr:v('fNr'),datum:v('fDatum'),forfall:v('fForfall'),status:v('fStatus'),
+        betaldDatum:v('fBetald'),rader:klon(rader),rut:radRut,rabatt:radRabatt,notering:v('fNot'),offertId:f.offertId||''};
+      if(d.status==='betald'&&!d.betaldDatum)d.betaldDatum=ymd(new Date());
+      if(fid)andra('Ändrade faktura '+d.nr,s=>Object.assign(s.fakturor.find(x=>x.id===fid),d));
+      else andra('Skapade faktura '+d.nr,s=>{s.fakturor.push({id:id(),...d});
+        if(String(d.nr)===String(s.installningar.nastaFakturaNr))s.installningar.nastaFakturaNr=num(d.nr)+1;
+        const k=s.kunder.find(x=>x.id===d.kundId); if(k)k.status='fakturerad';});
+      stangModal();
+    }});
+  ritaSumma();
+}
+function mejlaFaktura(fid){
+  const f=S.fakturor.find(x=>x.id===fid), k=kund(f.kundId), b=raknaRader(f.rader,f.rabatt,f.rut), fo=S.installningar.foretag;
+  const brod=`Hej ${k?k.namn.split(' ')[0]:''},
+
+Här kommer fakturan för utfört arbete.
+
+Fakturanummer: ${f.nr}
+Fakturadatum: ${f.datum}
+Förfallodatum: ${f.forfall}
+Att betala: ${kr(b.attBetala)}${b.rut?` (efter RUT-avdrag om ${kr(b.rut)})`:''}
+Betalas till: ${fo.bankgiro||fo.swish||'[fyll i bankgiro i inställningar]'}
+Ange fakturanummer ${f.nr} som referens.
+
+${f.notering||''}
+
+Vänliga hälsningar
+${fo.namn||''}
+${fo.tel||''}`;
+  window.location.href=`mailto:${k&&k.epost?encodeURIComponent(k.epost):''}?subject=${encodeURIComponent('Faktura '+f.nr+(fo.namn?' från '+fo.namn:''))}&body=${encodeURIComponent(brod)}`;
+  toast('Mejlet öppnas — bifoga PDF:en du skriver ut.');
+}
+
+/* ---------- Utskrift ---------- */
+function skrivUt(typ,dokId){
+  const d=typ==='faktura'?S.fakturor.find(x=>x.id===dokId):S.offerter.find(x=>x.id===dokId);
+  const k=kund(d.kundId)||{}, fo=S.installningar.foretag, b=raknaRader(d.rader,d.rabatt,d.rut);
+  $('#utskrift').innerHTML=`<div class="pf">
+    <div class="pf-topp"><div><h1>${typ==='faktura'?'Faktura':'Offert'}</h1>
+      <div style="font-family:var(--mono);font-size:13px">Nr ${esc(String(d.nr))}</div></div>
+      <div style="text-align:right"><div style="font-family:var(--disp);font-weight:700;font-size:16px">${esc(fo.namn||'Ditt företag')}</div>
+        <div>${esc(fo.adress||'')}<br>${esc(fo.postort||'')}</div><div>${esc(fo.tel||'')} · ${esc(fo.epost||'')}</div>
+        <div style="font-family:var(--mono);font-size:10px;margin-top:3px">Org.nr ${esc(fo.orgnr||'—')}</div></div></div>
+    <div class="pf-tva">
+      <div><div class="et">Kund</div><b>${esc(k.namn||'')}</b><br>${esc(k.adress||'')}<br>${esc([k.postnr,k.ort].filter(Boolean).join(' '))}
+        ${k.epost?'<br>'+esc(k.epost):''}${d.rut&&k.personnr?`<br><span style="font-family:var(--mono);font-size:10px">Pers.nr ${esc(k.personnr)}</span>`:''}
+        ${d.rut&&k.fastighet?`<br><span style="font-family:var(--mono);font-size:10px">Fastighet ${esc(k.fastighet)}</span>`:''}</div>
+      <div><div class="et">${typ==='faktura'?'Fakturadatum':'Offertdatum'}</div>${esc(d.datum)}
+        <div class="et" style="margin-top:8px">${typ==='faktura'?'Förfallodatum':'Giltig till'}</div>${esc(typ==='faktura'?d.forfall:d.giltigTill)}
+        ${typ==='faktura'?`<div class="et" style="margin-top:8px">Betalning</div>${fo.bankgiro?'Bankgiro '+esc(fo.bankgiro):''}${fo.swish?(fo.bankgiro?' · ':'')+'Swish '+esc(fo.swish):''}`:''}</div></div>
+    <table><thead><tr><th>Beskrivning</th><th class="h">Antal</th><th class="h">À-pris</th><th class="h">Belopp</th></tr></thead>
+      <tbody>${d.rader.map(r=>`<tr><td>${esc(r.namn)}${r.rut?' <span style="font-size:9px;color:#666">(RUT)</span>':''}</td>
+        <td class="h">${nf.format(r.antal)} ${esc(r.enhet||'')}</td><td class="h">${nf.format(r.pris)}</td>
+        <td class="h">${nf.format(r.antal*r.pris)}</td></tr>`).join('')}</tbody></table>
+    <div class="pf-sum">${d.rabatt?`<div><span>Rabatt</span><span>${d.rabatt}%</span></div>`:''}
+      <div><span>Netto</span><span>${kr(b.netto)}</span></div>
+      <div><span>Moms ${S.installningar.moms}%</span><span>${kr(b.moms)}</span></div>
+      <div><span>Totalt inkl. moms</span><span>${kr(b.brutto)}</span></div>
+      ${b.rut?`<div><span>RUT-avdrag</span><span>−${kr(b.rut)}</span></div>`:''}
+      <div class="tot"><span>${typ==='faktura'?'Att betala':'Pris till kund'}</span><span>${kr(b.attBetala)}</span></div></div>
+    ${d.notering?`<div style="margin-top:18px;clear:both"><div class="et">Meddelande</div>${esc(d.notering).replace(/\n/g,'<br>')}</div>`:''}
+    <div class="pf-fot">
+      <div><div class="et">Företag</div>${esc(fo.namn||'')}<br>Org.nr ${esc(fo.orgnr||'—')}${fo.momsnr?'<br>Moms.nr '+esc(fo.momsnr):''}</div>
+      <div><div class="et">Betalning</div>${fo.bankgiro?'Bankgiro '+esc(fo.bankgiro)+'<br>':''}${fo.swish?'Swish '+esc(fo.swish)+'<br>':''}
+        ${typ==='faktura'?'Betalningsvillkor '+S.installningar.betalvillkor+' dagar':''}</div>
+      <div><div class="et">Övrigt</div>${fo.fskatt?'Innehar F-skattsedel<br>':''}
+        ${b.rut?'RUT-avdrag begärs hos Skatteverket. Beviljas inte avdraget faktureras mellanskillnaden.':''}</div></div>
+  </div>`;
+  window.print();
+}
+
+/* ==========================================================================
+   MÅL
+   ========================================================================== */
+function vyMal(){
+  const st=samlaStat(ymd(ANKARE),ymd(plusDagar(ANKARE,6))), m=S.mal.vecka;
+  const nu=new Date(), sp=spannFor('manad'), mst=samlaStat(sp.f,sp.t);
+  const veckor=[6,5,4,3,2,1,0].map(i=>{const a=plusDagar(ANKARE,-7*i);
+    const s=samlaStat(ymd(a),ymd(plusDagar(a,6)));return{nr:veckoNr(a),total:s.total,dorrar:s.dorrar};});
+  const max=Math.max(...veckor.map(x=>x.total),1);
+  return `
+  <div class="kort">
+    <div class="kort-topp"><h2>Veckans mål</h2><button class="knapp liten" style="margin-left:auto" onclick="malModal('vecka')">Ändra</button></div>
+    ${matare('Dörrar knackade',st.dorrar,m.dorrar)}
+    ${matare('Samtal (öppnade dörrar)',st.oppnade,m.samtal)}
+    ${matare('Offerter skickade',st.offerter,m.offerter)}
+    ${matare('Sålt för',st.salt,m.salt,n=>nf.format(n)+' kr')}
+    ${matare('Timlön sälj',st.timlonSalj,m.timlonSalj,n=>nf.format(n)+' kr')}
+    ${matare('Timlön jobb',st.timlonJobb,m.timlonJobb,n=>nf.format(n)+' kr')}
+  </div>
+  <div class="kort">
+    <div class="kort-topp"><h2>Månadens mål</h2><span class="hnt">${MAN[nu.getMonth()]}</span>
+      <button class="knapp liten" onclick="malModal('manad')">Ändra</button></div>
+    ${matare('Inarbetat',mst.total,S.mal.manad.salt,n=>nf.format(n)+' kr')}
+    ${matare('Genomförda jobb',mst.jobb.reduce((s,x)=>s+x.s.klara,0),S.mal.manad.jobb)}
+  </div>
+  <div class="kort">
+    <div class="kort-topp"><h2>Sju veckor bakåt</h2><span class="hnt">inarbetat per vecka</span></div>
+    <div style="display:flex;align-items:flex-end;gap:7px;height:135px;padding-top:8px">
+      ${veckor.map(x=>`<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--dov)">${x.total?nf.format(Math.round(x.total/1000))+'k':''}</div>
+        <div style="width:100%;background:${x.total>=m.salt?'var(--gron)':'var(--accent)'};border-radius:4px 4px 0 0;height:${Math.max(x.total/max*88,2)}%"></div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--dov);margin-top:5px">v${x.nr}</div></div>`).join('')}
+    </div>
+  </div>`;
+}
+function malModal(p){
+  const m=S.mal[p];
+  const falt=p==='vecka'?[['dorrar','Dörrar per vecka'],['samtal','Öppnade dörrar per vecka'],['offerter','Offerter per vecka'],
+    ['salt','Sålt för, kr'],['timlonSalj','Timlön sälj, kr'],['timlonJobb','Timlön jobb, kr']]
+    :[['salt','Inarbetat, kr'],['jobb','Antal genomförda jobb']];
+  modal({titel:p==='vecka'?'Veckans mål':'Månadens mål',
+    kropp:falt.map(([k,n])=>`<div class="falt"><label>${n}</label><input id="m_${k}" type="number" value="${m[k]||0}"></div>`).join('')
+      +`<p style="font-size:13px;color:var(--dov)">Sätt mål du faktiskt kan nå den här veckan. Ett mål du missar varje gång slutar betyda något.</p>`,
+    onSpara:()=>{const d={};falt.forEach(([k])=>d[k]=vn('m_'+k));
+      andra('Ändrade '+(p==='vecka'?'veckomålen':'månadsmålen'),s=>Object.assign(s.mal[p],d));stangModal();}});
+}
+
+/* ==========================================================================
+   INSTÄLLNINGAR
+   ========================================================================== */
+function vyInstallningar(){
+  const f=S.installningar.foretag, st=S.installningar;
+  return `
+  <div class="kort"><div class="kort-topp"><h2>Företagsuppgifter</h2><span class="hnt">syns på offerter och fakturor</span></div>
+    <div class="falt"><label>Företagsnamn</label><input id="fNamn" value="${esc(f.namn)}" onchange="sparaForetag()"></div>
+    <div class="falt-rad"><div class="falt"><label>Organisationsnummer</label><input id="fOrg" value="${esc(f.orgnr)}" onchange="sparaForetag()"></div>
+      <div class="falt"><label>Momsregistreringsnr</label><input id="fMoms" value="${esc(f.momsnr)}" onchange="sparaForetag()"></div></div>
+    <div class="falt-rad"><div class="falt"><label>Adress</label><input id="fAdr" value="${esc(f.adress)}" onchange="sparaForetag()"></div>
+      <div class="falt"><label>Postnr och ort</label><input id="fPost" value="${esc(f.postort)}" onchange="sparaForetag()"></div></div>
+    <div class="falt-rad"><div class="falt"><label>Telefon</label><input id="fTel" value="${esc(f.tel)}" onchange="sparaForetag()"></div>
+      <div class="falt"><label>E-post</label><input id="fEp" value="${esc(f.epost)}" onchange="sparaForetag()"></div></div>
+    <div class="falt-rad"><div class="falt"><label>Bankgiro</label><input id="fBg" value="${esc(f.bankgiro)}" onchange="sparaForetag()"></div>
+      <div class="falt"><label>Swish</label><input id="fSw" value="${esc(f.swish)}" onchange="sparaForetag()"></div></div>
+    <div class="falt kryss"><input type="checkbox" id="fFsk" ${f.fskatt?'checked':''} onchange="sparaForetag()"><span>Innehar F-skattsedel</span></div>
+  </div>
+  <div class="kort"><div class="kort-topp"><h2>Priser och villkor</h2></div>
+    <div class="falt-rad tre">
+      <div class="falt"><label>Moms %</label><input id="iMoms" type="number" value="${st.moms}" onchange="sparaVillkor()"></div>
+      <div class="falt"><label>RUT %</label><input id="iRut" type="number" value="${st.rutProcent}" onchange="sparaVillkor()"></div>
+      <div class="falt"><label>RUT-tak kr/år</label><input id="iRutTak" type="number" value="${st.rutTak}" onchange="sparaVillkor()"></div></div>
+    <div class="falt-rad tre">
+      <div class="falt"><label>Betalningsvillkor dagar</label><input id="iBetal" type="number" value="${st.betalvillkor}" onchange="sparaVillkor()"></div>
+      <div class="falt"><label>Offert giltig dagar</label><input id="iGiltig" type="number" value="${st.offertGiltig}" onchange="sparaVillkor()"></div>
+      <div class="falt"><label>Nästa fakturanr</label><input id="iFnr" type="number" value="${st.nastaFakturaNr}" onchange="sparaVillkor()"></div></div>
+    <div class="falt-rad">
+      <div class="falt"><label>Schemat börjar kl</label><input id="iSchStart" type="number" min="0" max="23" value="${st.schemaStart}" onchange="sparaVillkor()"></div>
+      <div class="falt"><label>Schemat slutar kl</label><input id="iSchSlut" type="number" min="1" max="24" value="${st.schemaSlut}" onchange="sparaVillkor()"></div></div>
+    <p style="font-size:13px;color:var(--dov);margin:0">Reglerna för RUT och moms ändras då och då — stäm av procentsats och tak med Skatteverket innan du skickar skarpa fakturor.</p>
+  </div>
+  <div class="kort"><div class="kort-topp"><h2>Prislista</h2>
+    <button class="knapp liten" style="margin-left:auto" onclick="prisModal()">+ Lägg till</button></div>
+    ${st.prislista.map(p=>`<div class="post" onclick="prisModal('${p.id}')">
+      <div><div class="post-huvud">${esc(p.namn)}</div><div class="post-meta">${p.rut?'RUT-berättigat arbete':'Utan RUT'}</div></div>
+      <div class="post-hoger"><div class="belopp">${nf.format(p.pris)} kr</div><div class="post-meta">per ${esc(p.enhet)}</div></div></div>`).join('')}
+  </div>
+  <div class="kort"><div class="kort-topp"><h2>Data</h2></div>
+    <div class="knappar">
+      <button class="knapp" onclick="synkModal()">GitHub-synk</button>
+      <button class="knapp" onclick="exportera()">Ladda ner säkerhetskopia</button>
+      <button class="knapp" onclick="document.getElementById('impFil').click()">Läs in säkerhetskopia</button>
+      <button class="knapp fara" onclick="nollstall()">Radera allt</button></div>
+    <input type="file" id="impFil" accept="application/json" style="display:none" onchange="importera(this)">
+    <div class="tal-rutnat" style="margin-top:12px">
+      <div class="tal"><b>${S.kunder.length}</b><span>Kunder</span></div>
+      <div class="tal"><b>${S.schema.length}</b><span>Pass</span></div>
+      <div class="tal"><b>${S.schema.reduce((s,p)=>s+(p.jobb||[]).length,0)}</b><span>Jobb</span></div>
+      <div class="tal"><b>${S.offerter.length}</b><span>Offerter</span></div>
+      <div class="tal"><b>${S.fakturor.length}</b><span>Fakturor</span></div></div>
+    <p style="font-size:13px;color:var(--dov);margin-bottom:0">Senast ändrat ${new Date(S.updatedAt).toLocaleString('sv-SE')}. Ångra med Ctrl+Z, gör om med Ctrl+Skift+Z.</p>
+  </div>`;
+}
+function sparaForetag(){
+  andra('Uppdaterade företagsuppgifter',s=>Object.assign(s.installningar.foretag,{namn:v('fNamn'),orgnr:v('fOrg'),
+    momsnr:v('fMoms'),adress:v('fAdr'),postort:v('fPost'),tel:v('fTel'),epost:v('fEp'),bankgiro:v('fBg'),swish:v('fSw'),fskatt:vb('fFsk')}));
+}
+function sparaVillkor(){
+  andra('Uppdaterade villkor',s=>Object.assign(s.installningar,{moms:vn('iMoms'),rutProcent:vn('iRut'),rutTak:vn('iRutTak'),
+    betalvillkor:vn('iBetal'),offertGiltig:vn('iGiltig'),nastaFakturaNr:vn('iFnr'),
+    schemaStart:Math.min(23,Math.max(0,vn('iSchStart'))),schemaSlut:Math.min(24,Math.max(1,vn('iSchSlut')))}));
+}
+function prisModal(pid){
+  const p=pid?S.installningar.prislista.find(x=>x.id===pid):{namn:'',enhet:'m²',pris:0,rut:true};
+  modal({titel:pid?'Ändra pris':'Ny rad i prislistan',
+    kropp:`<div class="falt"><label>Tjänst</label><input id="plNamn" value="${esc(p.namn)}"></div>
+      <div class="falt-rad"><div class="falt"><label>Enhet</label><select id="plEnhet">
+        ${['m²','lpm','tim','st'].map(e=>`<option ${p.enhet===e?'selected':''}>${e}</option>`).join('')}</select></div>
+        <div class="falt"><label>Pris exkl. moms</label><input id="plPris" type="number" value="${p.pris}"></div></div>
+      <div class="falt kryss"><input type="checkbox" id="plRut" ${p.rut?'checked':''}><span>Räknas som arbete (ger RUT)</span></div>`,
+    extra:pid?`<button class="knapp fara" onclick="taBortPris('${pid}')">Ta bort</button>`:'',
+    onSpara:()=>{const d={namn:v('plNamn'),enhet:v('plEnhet'),pris:vn('plPris'),rut:vb('plRut')};
+      if(pid)andra('Ändrade priset på '+d.namn,s=>Object.assign(s.installningar.prislista.find(x=>x.id===pid),d));
+      else andra('La till '+d.namn+' i prislistan',s=>s.installningar.prislista.push({id:id(),...d}));
+      stangModal();}});
+}
+function taBortPris(pid){
+  const p=S.installningar.prislista.find(x=>x.id===pid);
+  andra('Tog bort '+p.namn,s=>s.installningar.prislista=s.installningar.prislista.filter(x=>x.id!==pid)); stangModal();
+}
+function taBort(samling,oid,vad){andra('Tog bort '+vad,s=>{s[samling]=s[samling].filter(x=>x.id!==oid);});stangModal();}
+
+function exportera(){
+  const b=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='trycket-'+ymd(new Date())+'.json'; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000); toast('Säkerhetskopian laddas ner');
+}
+function importera(inp){
+  const fil=inp.files[0]; if(!fil)return;
+  const l=new FileReader();
+  l.onload=()=>{try{const d=JSON.parse(l.result); if(!d.kunder&&!d.schema)throw new Error('fel format');
+    andra('Läste in säkerhetskopia',s=>Object.assign(s,migrera(d)));}
+    catch(e){toast('Filen gick inte att läsa. Välj en säkerhetskopia från Trycket.');}};
+  l.readAsText(fil); inp.value='';
+}
+function nollstall(){
+  modal({titel:'Radera allt?',
+    kropp:`<p>Allt raderas från den här enheten: ${S.kunder.length} kunder, ${S.schema.length} pass, ${S.offerter.length} offerter, ${S.fakturor.length} fakturor.
+      Kopian i GitHub ligger kvar tills appen sparar nästa gång.</p>
+      <p style="font-size:13px;color:var(--dov)">Ladda ner en säkerhetskopia först om du är minsta osäker.</p>`,
+    extra:`<button class="knapp fara" onclick="andra('Raderade allt',s=>Object.assign(s,tomtLage()));stangModal()">Radera allt</button>`});
+}
+
+/* ==========================================================================
+   GITHUB-SYNK
+   ========================================================================== */
+let synk={token:'',repo:'',gren:'main',fil:'data/trycket.json',sha:null,senast:null,auto:true};
+try{Object.assign(synk,JSON.parse(localStorage.getItem(NYCKEL_SYNK)||'{}'));}catch(e){}
+function sparaSynk(){localStorage.setItem(NYCKEL_SYNK,JSON.stringify(synk));}
+let pushTimer=null, synkLage='av';
+function synkStatus(l,t){synkLage=l;
+  $('#synkPrick').className='prick'+(l==='ok'?' ok':l==='jobbar'?' jobbar':l==='fel'?' fel':'');
+  $('#synkText').textContent=t;}
+function kopplad(){return synk.token&&synk.repo&&synk.repo.includes('/');}
+function b64(s){return btoa(String.fromCharCode(...new TextEncoder().encode(s)));}
+function avb64(b){return new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g,'')),c=>c.charCodeAt(0)));}
+function ghUrl(){return `https://api.github.com/repos/${synk.repo}/contents/${synk.fil}`;}
+function ghHead(){return{Authorization:'Bearer '+synk.token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};}
+function planeraPush(){if(!kopplad()||!synk.auto)return;clearTimeout(pushTimer);synkStatus('jobbar','Sparar…');pushTimer=setTimeout(()=>pusha(),2500);}
+async function pusha(tvinga){
+  if(!kopplad())return;
+  synkStatus('jobbar','Sparar…');
+  try{
+    let sha=synk.sha;
+    const h=await fetch(ghUrl()+'?ref='+encodeURIComponent(synk.gren),{headers:ghHead(),cache:'no-store'});
+    if(h.ok){const j=await h.json(); sha=j.sha;
+      if(!tvinga&&j.content){const fj=JSON.parse(avb64(j.content));
+        if(fj.updatedAt&&new Date(fj.updatedAt)>new Date(S.updatedAt)){synkStatus('fel','Konflikt');return krockModal(fj);}}}
+    else if(h.status===404)sha=null;
+    else if(h.status===401||h.status===403)throw new Error('Token nekad ('+h.status+')');
+    const r=await fetch(ghUrl(),{method:'PUT',headers:{...ghHead(),'Content-Type':'application/json'},
+      body:JSON.stringify({message:'Trycket '+new Date().toLocaleString('sv-SE'),content:b64(JSON.stringify(S,null,1)),branch:synk.gren,...(sha?{sha}:{})})});
+    if(!r.ok)throw new Error(r.status+' '+(await r.text()).slice(0,110));
+    const j=await r.json(); synk.sha=j.content.sha; synk.senast=new Date().toISOString(); sparaSynk();
+    synkStatus('ok','Synkad '+new Date().toLocaleTimeString('sv-SE',{hour:'2-digit',minute:'2-digit'}));
+  }catch(e){synkStatus('fel','Synk misslyckades');console.error(e);toast('Synk misslyckades: '+e.message,{knapp:'Visa',gor:synkModal});}
+}
+async function hamta(tyst){
+  if(!kopplad())return;
+  synkStatus('jobbar','Hämtar…');
+  try{
+    const r=await fetch(ghUrl()+'?ref='+encodeURIComponent(synk.gren),{headers:ghHead(),cache:'no-store'});
+    if(r.status===404){synkStatus('ok','Ingen fil ännu');if(!tyst)toast('Ingen datafil i repot ännu — spara något så skapas den.');return;}
+    if(!r.ok)throw new Error('Status '+r.status);
+    const j=await r.json(); synk.sha=j.sha; sparaSynk();
+    const fj=JSON.parse(avb64(j.content));
+    if(!fj.updatedAt||new Date(fj.updatedAt)<=new Date(S.updatedAt)){
+      synkStatus('ok','Allt är i synk'); if(!tyst)toast('Den lokala versionen är redan senast.'); return;}
+    angraStack.push({text:'Hämtning från GitHub',bild:klon(S)});
+    S=migrera(fj); localStorage.setItem(NYCKEL,JSON.stringify(S)); rita();
+    synkStatus('ok','Synkad '+new Date().toLocaleTimeString('sv-SE',{hour:'2-digit',minute:'2-digit'}));
+    if(!tyst)toast('Hämtade senaste versionen',{knapp:'Ångra',gor:angra});
+  }catch(e){synkStatus('fel','Hämtning misslyckades');if(!tyst)toast('Kunde inte hämta: '+e.message);}
+}
+function krockModal(fj){
+  modal({titel:'Två versioner krockar',
+    kropp:`<p>Filen i GitHub är nyare än den här enheten. Välj vilken som gäller — den andra skrivs över.</p>
+      <div class="tal-rutnat" style="margin:12px 0">
+        <div class="tal"><b style="font-size:14px">${esc(new Date(fj.updatedAt).toLocaleString('sv-SE'))}</b><span>I GitHub</span></div>
+        <div class="tal"><b style="font-size:14px">${esc(new Date(S.updatedAt).toLocaleString('sv-SE'))}</b><span>Här på enheten</span></div></div>
+      <p style="font-size:13px;color:var(--dov)">Har du lagt in saker på båda ställena: hämta molnversionen först, lägg in det som saknas och spara igen.</p>`,
+    extra:`<button class="knapp" onclick="stangModal();hamta()">Använd GitHub</button>
+           <button class="knapp fara" onclick="stangModal();pusha(true)">Skriv över GitHub</button>`});
+}
+function synkModal(){
+  modal({titel:'GitHub-synk',
+    kropp:`<div class="falt"><label>Personlig åtkomsttoken</label>
+      <input id="sToken" type="password" value="${esc(synk.token)}" placeholder="github_pat_… eller ghp_…" autocomplete="off"></div>
+    <div class="falt"><label>Repo (ägare/namn)</label><input id="sRepo" value="${esc(synk.repo)}" placeholder="dittnamn/trycket-data"></div>
+    <div class="falt-rad"><div class="falt"><label>Gren</label><input id="sGren" value="${esc(synk.gren)}"></div>
+      <div class="falt"><label>Filens sökväg</label><input id="sFil" value="${esc(synk.fil)}"></div></div>
+    <div class="falt kryss"><input type="checkbox" id="sAuto" ${synk.auto?'checked':''}><span>Spara till GitHub automatiskt</span></div>
+    <div style="border:1px solid var(--accent2);border-radius:8px;padding:11px;font-size:13px;margin-top:6px">
+      <b>Om säkerheten:</b> tokenen ligger i webbläsarens lagring på just den här enheten och skickas bara till GitHub.
+      Använd en fine-grained token med enbart "Contents: Read and write" på ett <b>privat</b> datarepo — aldrig en token med bred åtkomst.</div>
+    <div class="knappar" style="margin-top:12px">
+      <button class="knapp" onclick="hamta()">Hämta från GitHub</button>
+      <button class="knapp" onclick="pusha(true)">Spara till GitHub nu</button></div>`,
+    sparaText:'Spara koppling',
+    onSpara:()=>{
+      synk.token=v('sToken'); synk.repo=v('sRepo').replace(/^https?:\/\/github\.com\//,'').replace(/\.git$/,'');
+      synk.gren=v('sGren')||'main'; synk.fil=v('sFil')||'data/trycket.json'; synk.auto=vb('sAuto'); synk.sha=null;
+      sparaSynk(); stangModal();
+      if(kopplad()){synkStatus('ok','Kopplad');hamta(true);}else synkStatus('av','Ej kopplad');
+      toast('Kopplingen sparad');
+    }});
+}
+$('#synkKnapp').onclick=synkModal;
+
+/* ---------- Start ---------- */
+S=ladda(); rita();
+if(kopplad()){synkStatus('ok','Kopplad');hamta(true);setInterval(()=>{if(synkLage!=='jobbar')hamta(true);},120000);}
+else synkStatus('av','Ej kopplad');
+window.addEventListener('beforeunload',()=>{if(pushTimer){clearTimeout(pushTimer);pusha();}});
+</script>
+</body>
+</html>
