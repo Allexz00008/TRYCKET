@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T10:14:23.447Z",
+ "updatedAt": "2026-08-14T10:16:35.432Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -93,6 +93,13 @@
     "enhet": "m²",
     "pris": 160,
     "rut": true
+   },
+   {
+    "id": "msssivkp6rhjx",
+    "namn": "Stupränna 2 plan",
+    "enhet": "m²",
+    "pris": 220,
+    "rut": true
    }
   ]
  },
@@ -113,6 +120,25 @@
  "kunder": [],
  "offerter": [],
  "fakturor": [],
- "schema": [],
+ "schema": [
+  {
+   "id": "mssslduwgh5rd",
+   "typ": "salj",
+   "titel": "Näsbypark 1",
+   "datum": "2026-08-13",
+   "start": "19:00",
+   "slut": "20:00",
+   "plats": "Näsbypark MIO",
+   "kundId": "",
+   "notering": "",
+   "klar": true,
+   "dorrar": 7,
+   "oppnade": 4,
+   "samtal": 4,
+   "offerter": 1,
+   "saltBelopp": 0,
+   "jobb": []
+  }
+ ],
  "dorrar": []
 }
