@@ -1,14 +1,14 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T10:16:35.432Z",
+ "updatedAt": "2026-08-14T14:45:15.846Z",
  "installningar": {
   "foretag": {
-   "namn": "NyTrädgård",
+   "namn": "",
    "orgnr": "",
-   "adress": "Sommarvägen 1",
-   "postort": "18274 Stocksund",
-   "tel": "+46762233711",
-   "epost": "orbomalexander@gmail.com",
+   "adress": "",
+   "postort": "",
+   "tel": "",
+   "epost": "",
    "bankgiro": "",
    "swish": "",
    "momsnr": "",
@@ -25,81 +25,67 @@
   "schemaSlut": 21,
   "prislista": [
    {
-    "id": "msrppd3kfwucq",
+    "id": "mst26q95mxv83",
     "namn": "Fasadtvätt",
     "enhet": "m²",
     "pris": 55,
     "rut": true
    },
    {
-    "id": "msrppd3kp89r2",
+    "id": "mst26q968minn",
     "namn": "Taktvätt",
     "enhet": "m²",
     "pris": 75,
     "rut": true
    },
    {
-    "id": "msrppd3k8z47l",
+    "id": "mst26q965jgsf",
     "namn": "Altan / trädäck",
     "enhet": "m²",
     "pris": 45,
     "rut": true
    },
    {
-    "id": "msrppd3kgua76",
+    "id": "mst26q96qo25x",
     "namn": "Uppfart / plattor",
     "enhet": "m²",
     "pris": 35,
     "rut": true
    },
    {
-    "id": "msrppd3kp08dr",
+    "id": "mst26q96972y3",
     "namn": "Staket",
     "enhet": "lpm",
     "pris": 40,
     "rut": true
    },
    {
-    "id": "msrppd3kwdqal",
+    "id": "mst26q96jctcs",
     "namn": "Garageport",
     "enhet": "st",
     "pris": 350,
     "rut": true
    },
    {
-    "id": "msrppd3k33zs9",
+    "id": "mst26q96hywf0",
     "namn": "Arbete löpande",
     "enhet": "tim",
     "pris": 650,
     "rut": true
    },
    {
-    "id": "msrppd3k5yfpi",
+    "id": "mst26q96s2tic",
     "namn": "Framkörning",
     "enhet": "st",
     "pris": 500,
     "rut": false
    },
    {
-    "id": "msrppd3kd48sz",
+    "id": "mst26q96cgfsp",
     "namn": "Material / kemi",
     "enhet": "st",
     "pris": 0,
     "rut": false
-   },
-   {
-    "id": "msrxbni2ggign",
-    "namn": "Stupränna 1 plan",
-    "enhet": "m²",
-    "pris": 160,
-    "rut": true
-   },
-   {
-    "id": "msssivkp6rhjx",
-    "namn": "Stupränna 2 plan",
-    "enhet": "m²",
-    "pris": 220,
-    "rut": true
    }
   ]
  },
@@ -122,22 +108,22 @@
  "fakturor": [],
  "schema": [
   {
-   "id": "mssslduwgh5rd",
+   "id": "mst26wg6i567n",
+   "datum": "2026-08-14",
+   "start": "14:45",
+   "slut": "16:45",
    "typ": "salj",
-   "titel": "Näsbypark 1",
-   "datum": "2026-08-13",
-   "start": "19:00",
-   "slut": "20:00",
-   "plats": "Näsbypark MIO",
+   "titel": "Säljrunda",
+   "plats": "",
    "kundId": "",
    "notering": "",
    "klar": true,
-   "dorrar": 7,
-   "oppnade": 4,
-   "samtal": 4,
+   "jobb": [],
+   "dorrar": 6,
+   "oppnade": 0,
+   "samtal": 0,
    "offerter": 1,
-   "saltBelopp": 0,
-   "jobb": []
+   "saltBelopp": 0
   }
  ],
  "dorrar": []
