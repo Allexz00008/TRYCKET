@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T15:51:56.072Z",
+ "updatedAt": "2026-08-14T15:52:40.269Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1001,
-  "nastaOffertNr": 101,
+  "nastaOffertNr": 102,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -120,7 +120,28 @@
    "notering": ""
   }
  ],
- "offerter": [],
+ "offerter": [
+  {
+   "id": "mst4ll59pundd",
+   "kundId": "mst4kn1k2uhct",
+   "nr": "101",
+   "datum": "2026-08-14",
+   "giltigTill": "2026-09-13",
+   "status": "utkast",
+   "passId": "mst26wg6i567n",
+   "rader": [
+    {
+     "namn": "Stupränna",
+     "antal": 68,
+     "pris": 80,
+     "rut": true
+    }
+   ],
+   "rut": false,
+   "rabatt": 30,
+   "notering": ""
+  }
+ ],
  "fakturor": [],
  "schema": [
   {
