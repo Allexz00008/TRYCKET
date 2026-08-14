@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:18:00.446Z",
+ "updatedAt": "2026-08-14T16:18:23.281Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1001,
-  "nastaOffertNr": 103,
+  "nastaOffertNr": 104,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -128,7 +128,7 @@
    "ort": "",
    "tel": "",
    "epost": "",
-   "status": "lead",
+   "status": "offert",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
@@ -149,6 +149,26 @@
      "namn": "Stuprännetvätr",
      "antal": 69,
      "pris": 80,
+     "rut": true
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": ""
+  },
+  {
+   "id": "mst5inqph08y9",
+   "kundId": "mst5fqwnqd8jj",
+   "nr": "103",
+   "datum": "2026-08-14",
+   "giltigTill": "2026-09-13",
+   "status": "utkast",
+   "passId": "mst4jle0rhekp",
+   "rader": [
+    {
+     "namn": "Stupränna",
+     "antal": 24,
+     "pris": 150,
      "rut": true
     }
    ],
