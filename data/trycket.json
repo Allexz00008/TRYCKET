@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T15:51:37.092Z",
+ "updatedAt": "2026-08-14T15:51:56.072Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -103,7 +103,23 @@
    "jobb": 12
   }
  },
- "kunder": [],
+ "kunder": [
+  {
+   "id": "mst4kn1k2uhct",
+   "skapad": "2026-08-14T15:51:56.072Z",
+   "namn": "Idha",
+   "adress": "Vedettvägen 8",
+   "postnr": "",
+   "ort": "",
+   "tel": "",
+   "epost": "",
+   "status": "offert",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  }
+ ],
  "offerter": [],
  "fakturor": [],
  "schema": [
