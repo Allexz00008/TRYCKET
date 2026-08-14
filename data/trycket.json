@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:14:32.723Z",
+ "updatedAt": "2026-08-14T16:16:07.417Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -114,6 +114,21 @@
    "tel": "",
    "epost": "",
    "status": "offert",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "mst5fqwnqd8jj",
+   "skapad": "2026-08-14T16:16:07.416Z",
+   "namn": "X",
+   "adress": "Ekbacksvägen 29b",
+   "postnr": "",
+   "ort": "",
+   "tel": "",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
