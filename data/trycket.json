@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T15:51:07.273Z",
+ "updatedAt": "2026-08-14T15:51:37.092Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -128,11 +128,11 @@
   {
    "id": "mst4jle0rhekp",
    "datum": "2026-08-14",
-   "start": "15:51",
+   "start": "17:17",
    "slut": "17:51",
    "typ": "salj",
    "titel": "Säljrunda",
-   "plats": "",
+   "plats": "Näsbypark allé",
    "kundId": "",
    "notering": "",
    "klar": true,
