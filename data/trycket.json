@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:16:07.417Z",
+ "updatedAt": "2026-08-14T16:16:15.255Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -167,7 +167,7 @@
    "typ": "salj",
    "titel": "Säljrunda",
    "plats": "Nora edsviken",
-   "kundId": "",
+   "kundId": "mst5fqwnqd8jj",
    "notering": "",
    "klar": true,
    "jobb": [],
