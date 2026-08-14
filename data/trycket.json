@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:14:04.436Z",
+ "updatedAt": "2026-08-14T16:14:32.723Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -160,7 +160,7 @@
    "oppnade": 6,
    "samtal": 6,
    "offerter": 1,
-   "saltBelopp": 0
+   "saltBelopp": 3600
   },
   {
    "id": "mst4jle0rhekp",
