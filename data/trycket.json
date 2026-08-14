@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:02:26.333Z",
+ "updatedAt": "2026-08-14T16:02:46.478Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -174,9 +174,9 @@
    "notering": "",
    "klar": true,
    "jobb": [],
-   "dorrar": 3,
-   "oppnade": 0,
-   "samtal": 0,
+   "dorrar": 6,
+   "oppnade": 3,
+   "samtal": 3,
    "offerter": 1,
    "saltBelopp": 0
   }
