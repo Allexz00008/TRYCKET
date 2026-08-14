@@ -1,11 +1,11 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T10:09:46.718Z",
+ "updatedAt": "2026-08-14T10:09:53.601Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
    "orgnr": "",
-   "adress": "",
+   "adress": "Sommarvägen 1",
    "postort": "",
    "tel": "",
    "epost": "",
