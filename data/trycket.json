@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T15:53:27.475Z",
+ "updatedAt": "2026-08-14T15:53:33.252Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -15,7 +15,7 @@
    "fskatt": true
   },
   "moms": 25,
-  "rutProcent": 50,
+  "rutProcent": 30,
   "rutTak": 75000,
   "betalvillkor": 30,
   "offertGiltig": 30,
