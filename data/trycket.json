@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:24:14.377Z",
+ "updatedAt": "2026-08-14T16:24:17.659Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -162,7 +162,7 @@
    "nr": "103",
    "datum": "2026-08-14",
    "giltigTill": "2026-09-13",
-   "status": "utkast",
+   "status": "skickad",
    "passId": "mst4jle0rhekp",
    "rader": [
     {
