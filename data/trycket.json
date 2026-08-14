@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:58:20.695Z",
+ "updatedAt": "2026-08-14T16:58:29.243Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -92,6 +92,13 @@
     "namn": "Stupränna 1 plan",
     "enhet": "m²",
     "pris": 120,
+    "rut": true
+   },
+   {
+    "id": "mst6y86zg3m8c",
+    "namn": "Stupränna 2 plan",
+    "enhet": "m²",
+    "pris": 180,
     "rut": true
    }
   ]
