@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T14:45:53.355Z",
+ "updatedAt": "2026-08-14T15:51:07.273Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -120,6 +120,24 @@
    "klar": true,
    "jobb": [],
    "dorrar": 6,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 1,
+   "saltBelopp": 0
+  },
+  {
+   "id": "mst4jle0rhekp",
+   "datum": "2026-08-14",
+   "start": "15:51",
+   "slut": "17:51",
+   "typ": "salj",
+   "titel": "Säljrunda",
+   "plats": "",
+   "kundId": "",
+   "notering": "",
+   "klar": true,
+   "jobb": [],
+   "dorrar": 3,
    "oppnade": 0,
    "samtal": 0,
    "offerter": 1,
