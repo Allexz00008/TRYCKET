@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:22:10.986Z",
+ "updatedAt": "2026-08-14T16:22:24.450Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -213,24 +213,6 @@
    "oppnade": 3,
    "samtal": 3,
    "offerter": 1,
-   "saltBelopp": 0
-  },
-  {
-   "id": "mst5njfsqap31",
-   "datum": "2026-08-14",
-   "start": "16:22",
-   "slut": "18:22",
-   "typ": "salj",
-   "titel": "Säljrunda",
-   "plats": "",
-   "kundId": "",
-   "notering": "",
-   "klar": true,
-   "jobb": [],
-   "dorrar": 1,
-   "oppnade": 1,
-   "samtal": 1,
-   "offerter": 3,
    "saltBelopp": 0
   }
  ],
