@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T15:53:33.252Z",
+ "updatedAt": "2026-08-14T15:53:42.139Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -120,28 +120,7 @@
    "notering": ""
   }
  ],
- "offerter": [
-  {
-   "id": "mst4ll59pundd",
-   "kundId": "mst4kn1k2uhct",
-   "nr": "101",
-   "datum": "2026-08-14",
-   "giltigTill": "2026-09-13",
-   "status": "utkast",
-   "passId": "mst26wg6i567n",
-   "rader": [
-    {
-     "namn": "Stupränna",
-     "antal": 68,
-     "pris": 80,
-     "rut": true
-    }
-   ],
-   "rut": false,
-   "rabatt": 30,
-   "notering": ""
-  }
- ],
+ "offerter": [],
  "fakturor": [],
  "schema": [
   {
