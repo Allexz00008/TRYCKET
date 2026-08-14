@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T17:03:15.595Z",
+ "updatedAt": "2026-08-14T17:03:32.179Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -127,7 +127,7 @@
    "ort": "",
    "tel": "",
    "epost": "",
-   "status": "fakturerad",
+   "status": "offert",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
