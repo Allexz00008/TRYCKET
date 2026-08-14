@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T17:04:05.026Z",
+ "updatedAt": "2026-08-14T17:04:17.363Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -199,7 +199,7 @@
    "start": "15:45",
    "slut": "16:45",
    "typ": "salj",
-   "titel": "Säljrunda",
+   "titel": "15.45-16.45",
    "plats": "Nora edsviken",
    "kundId": "mst5fqwnqd8jj",
    "notering": "",
