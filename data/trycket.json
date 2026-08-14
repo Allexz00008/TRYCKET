@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:23:59.193Z",
+ "updatedAt": "2026-08-14T16:24:03.875Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -177,29 +177,7 @@
    "notering": ""
   }
  ],
- "fakturor": [
-  {
-   "id": "mst5ooi4jt7ap",
-   "kundId": "mst4kn1k2uhct",
-   "nr": "1001",
-   "datum": "2026-08-14",
-   "forfall": "2026-09-13",
-   "status": "utkast",
-   "betaldDatum": "",
-   "rader": [
-    {
-     "namn": "Stuprännetvätr",
-     "antal": 69,
-     "pris": 80,
-     "rut": true
-    }
-   ],
-   "rut": true,
-   "rabatt": 0,
-   "notering": "",
-   "offertId": "mst4nbskiuzqt"
-  }
- ],
+ "fakturor": [],
  "schema": [
   {
    "id": "mst26wg6i567n",
