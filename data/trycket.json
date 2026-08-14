@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T17:03:32.179Z",
+ "updatedAt": "2026-08-14T17:03:54.842Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -217,7 +217,7 @@
    "start": "17:17",
    "slut": "17:51",
    "typ": "salj",
-   "titel": "Säljrunda",
+   "titel": "17:17-17:51",
    "plats": "Näsbypark allé",
    "kundId": "mst4kn1k2uhct",
    "notering": "",
