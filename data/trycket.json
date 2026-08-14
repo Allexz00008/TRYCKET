@@ -1,14 +1,14 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T10:09:53.601Z",
+ "updatedAt": "2026-08-14T10:14:23.447Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
    "orgnr": "",
    "adress": "Sommarvägen 1",
-   "postort": "",
-   "tel": "",
-   "epost": "",
+   "postort": "18274 Stocksund",
+   "tel": "+46762233711",
+   "epost": "orbomalexander@gmail.com",
    "bankgiro": "",
    "swish": "",
    "momsnr": "",
@@ -89,9 +89,9 @@
    },
    {
     "id": "msrxbni2ggign",
-    "namn": "Stupränna",
-    "enhet": "tim",
-    "pris": 2000,
+    "namn": "Stupränna 1 plan",
+    "enhet": "m²",
+    "pris": 160,
     "rut": true
    }
   ]
