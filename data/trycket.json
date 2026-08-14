@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T14:45:15.846Z",
+ "updatedAt": "2026-08-14T14:45:53.355Z",
  "installningar": {
   "foretag": {
    "namn": "",
@@ -110,11 +110,11 @@
   {
    "id": "mst26wg6i567n",
    "datum": "2026-08-14",
-   "start": "14:45",
+   "start": "15:45",
    "slut": "16:45",
    "typ": "salj",
    "titel": "Säljrunda",
-   "plats": "",
+   "plats": "Nora edsviken",
    "kundId": "",
    "notering": "",
    "klar": true,
