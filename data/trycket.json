@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-14T16:24:32.393Z",
+ "updatedAt": "2026-08-14T16:24:44.627Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -218,7 +218,7 @@
   {
    "id": "mst5qkjtrnuxw",
    "datum": "2026-08-14",
-   "start": "16:24",
+   "start": "18:10",
    "slut": "18:24",
    "typ": "salj",
    "titel": "Säljrunda",
