@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T10:29:56.712Z",
+ "updatedAt": "2026-08-15T10:30:08.222Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -308,7 +308,7 @@
    "typ": "salj",
    "titel": "Säljrunda Brevik",
    "plats": "",
-   "kundId": "msu7qwgys23vu",
+   "kundId": "",
    "notering": "",
    "klar": true,
    "jobb": [],
@@ -316,7 +316,7 @@
    "oppnade": 6,
    "samtal": 6,
    "offerter": 2,
-   "saltBelopp": 6400
+   "saltBelopp": 0
   },
   {
    "id": "msu7vb1ee9go0",
