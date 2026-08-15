@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T10:10:45.536Z",
+ "updatedAt": "2026-08-15T10:11:58.754Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -317,6 +317,32 @@
    "samtal": 4,
    "offerter": 1,
    "saltBelopp": 6400
+  },
+  {
+   "id": "msu7vb1ee9go0",
+   "typ": "jobb",
+   "titel": "Jobbpass",
+   "datum": "2026-08-31",
+   "start": "09:00",
+   "slut": "15:00",
+   "plats": "Lidingö",
+   "kundId": "msu7qwgys23vu",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": [
+    {
+     "id": "msu7upbuljiu1",
+     "kundId": "msu7qwgys23vu",
+     "tjanst": "Stupränna",
+     "belopp": 6400,
+     "klar": false
+    }
+   ]
   }
  ],
  "dorrar": []
