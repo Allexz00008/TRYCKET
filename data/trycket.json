@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T09:23:12.052Z",
+ "updatedAt": "2026-08-15T10:08:33.252Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -143,6 +143,21 @@
    "tel": "",
    "epost": "",
    "status": "offert",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msu7qwgys23vu",
+   "skapad": "2026-08-15T10:08:33.251Z",
+   "namn": "Markus Nöjdh",
+   "adress": "Östra allén 9",
+   "postnr": "",
+   "ort": "",
+   "tel": "0761441641",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
