@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T12:41:41.016Z",
+ "updatedAt": "2026-08-15T13:01:13.846Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -173,6 +173,21 @@
    "tel": "0725709944",
    "epost": "",
    "status": "bokad",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msudwyrauen3u",
+   "skapad": "2026-08-15T13:01:13.846Z",
+   "namn": "Krister Ingve",
+   "adress": "Törnrosvägen 31",
+   "postnr": "",
+   "ort": "",
+   "tel": "0704226021",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
