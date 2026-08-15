@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T10:29:47.521Z",
+ "updatedAt": "2026-08-15T10:29:56.712Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -212,7 +212,7 @@
    "datum": "2026-08-15",
    "giltigTill": "2026-09-14",
    "status": "accepterad",
-   "passId": "",
+   "passId": "msu7t5q3dlut9",
    "rader": [
     {
      "namn": "Stupränna",
