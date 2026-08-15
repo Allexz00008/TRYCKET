@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T10:09:22.950Z",
+ "updatedAt": "2026-08-15T10:09:54.811Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1002,
-  "nastaOffertNr": 104,
+  "nastaOffertNr": 105,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -157,7 +157,7 @@
    "ort": "Lidingö",
    "tel": "0761441641",
    "epost": "",
-   "status": "lead",
+   "status": "offert",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
@@ -198,6 +198,26 @@
      "namn": "Stupränna",
      "antal": 24,
      "pris": 150,
+     "rut": true
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": ""
+  },
+  {
+   "id": "msu7snejdnoe1",
+   "kundId": "msu7qwgys23vu",
+   "nr": "104",
+   "datum": "2026-08-15",
+   "giltigTill": "2026-09-14",
+   "status": "utkast",
+   "passId": "",
+   "rader": [
+    {
+     "namn": "Stupränna",
+     "antal": 36,
+     "pris": 180,
      "rut": true
     }
    ],
