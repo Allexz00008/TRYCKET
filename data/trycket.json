@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T13:25:12.524Z",
+ "updatedAt": "2026-08-15T13:26:15.137Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1002,
-  "nastaOffertNr": 107,
+  "nastaOffertNr": 108,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -317,6 +317,33 @@
      "namn": "Stupränna 1 plan",
      "antal": 5,
      "pris": 120,
+     "rut": true,
+     "enhet": "m²"
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": ""
+  },
+  {
+   "id": "msuet55tzcr81",
+   "kundId": "msuermztnx3e0",
+   "nr": "107",
+   "datum": "2026-08-15",
+   "giltigTill": "2026-09-14",
+   "status": "accepterad",
+   "passId": "msuceicccrfzt",
+   "rader": [
+    {
+     "namn": "Stupränna",
+     "antal": 11,
+     "pris": 120,
+     "rut": true
+    },
+    {
+     "namn": "Stupränna 2 plan",
+     "antal": 11,
+     "pris": 180,
      "rut": true,
      "enhet": "m²"
     }
