@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T12:23:49.110Z",
+ "updatedAt": "2026-08-15T12:24:22.242Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -172,7 +172,7 @@
    "ort": "",
    "tel": "0725709944",
    "epost": "",
-   "status": "offert",
+   "status": "bokad",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
