@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T13:25:04.938Z",
+ "updatedAt": "2026-08-15T13:25:12.524Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -202,7 +202,7 @@
    "ort": "",
    "tel": "0766272752",
    "epost": "",
-   "status": "lead",
+   "status": "bokad",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
