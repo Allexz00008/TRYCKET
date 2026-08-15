@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T13:14:04.433Z",
+ "updatedAt": "2026-08-15T13:25:04.938Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -188,6 +188,21 @@
    "tel": "0704226021",
    "epost": "",
    "status": "bokad",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msuermztnx3e0",
+   "skapad": "2026-08-15T13:25:04.938Z",
+   "namn": "Niklas lindlöf",
+   "adress": "Nysträngvägen 31",
+   "postnr": "",
+   "ort": "",
+   "tel": "0766272752",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
