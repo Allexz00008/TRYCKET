@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T12:18:53.148Z",
+ "updatedAt": "2026-08-15T12:19:15.127Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -362,10 +362,10 @@
   {
    "id": "msuceicccrfzt",
    "datum": "2026-08-15",
-   "start": "12:18",
+   "start": "13:18",
    "slut": "14:18",
    "typ": "salj",
-   "titel": "Säljrunda",
+   "titel": "Säljrunda Skärsätra",
    "plats": "",
    "kundId": "",
    "notering": "",
