@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T12:20:28.603Z",
+ "updatedAt": "2026-08-15T12:21:11.538Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -367,7 +367,7 @@
    "titel": "Jobbpass",
    "datum": "2026-08-31",
    "start": "09:00",
-   "slut": "15:00",
+   "slut": "13:00",
    "plats": "Lidingö",
    "kundId": "msu7qwgys23vu",
    "notering": "",
