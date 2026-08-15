@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T12:19:15.127Z",
+ "updatedAt": "2026-08-15T12:20:28.603Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1002,
-  "nastaOffertNr": 105,
+  "nastaOffertNr": 106,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -172,7 +172,7 @@
    "ort": "",
    "tel": "0725709944",
    "epost": "",
-   "status": "lead",
+   "status": "offert",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
@@ -234,6 +234,34 @@
      "antal": 36,
      "pris": 180,
      "rut": true
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": ""
+  },
+  {
+   "id": "msucgjzv6j3ur",
+   "kundId": "msuccq9guazcu",
+   "nr": "105",
+   "datum": "2026-08-15",
+   "giltigTill": "2026-09-14",
+   "status": "accepterad",
+   "passId": "msu64b67s2ca6",
+   "rader": [
+    {
+     "namn": "Stupränna 1 plan",
+     "antal": 24,
+     "pris": 120,
+     "rut": true,
+     "enhet": "m²"
+    },
+    {
+     "namn": "Stupränna 2 plan",
+     "antal": 6,
+     "pris": 180,
+     "rut": true,
+     "enhet": "m²"
     }
    ],
    "rut": true,
