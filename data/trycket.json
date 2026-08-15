@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T12:21:11.538Z",
+ "updatedAt": "2026-08-15T12:22:42.548Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -404,6 +404,32 @@
    "samtal": 1,
    "offerter": 1,
    "saltBelopp": 0
+  },
+  {
+   "id": "msucjfckx5htu",
+   "typ": "jobb",
+   "titel": "Skärsätra",
+   "datum": "2026-08-31",
+   "start": "14:00",
+   "slut": "17:00",
+   "plats": "Skärsätra",
+   "kundId": "msuccq9guazcu",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": [
+    {
+     "id": "msucj6afkv27c",
+     "kundId": "msuccq9guazcu",
+     "tjanst": "Stuprör",
+     "belopp": 3900,
+     "klar": false
+    }
+   ]
   }
  ],
  "dorrar": []
