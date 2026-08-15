@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T10:50:56.503Z",
+ "updatedAt": "2026-08-15T12:17:30.101Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -158,6 +158,21 @@
    "tel": "0761441641",
    "epost": "",
    "status": "bokad",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msuccq9guazcu",
+   "skapad": "2026-08-15T12:17:30.100Z",
+   "namn": "Joakim Kinell",
+   "adress": "Törnrosvägen 26",
+   "postnr": "",
+   "ort": "",
+   "tel": "0725709944",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
