@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T15:49:55.389Z",
+ "updatedAt": "2026-08-15T15:51:24.003Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -511,6 +511,32 @@
      "kundId": "msuccq9guazcu",
      "tjanst": "Stuprör",
      "belopp": 3900,
+     "klar": false
+    }
+   ]
+  },
+  {
+   "id": "msujzsyr1ulr6",
+   "typ": "jobb",
+   "titel": "PREL",
+   "datum": "2026-08-31",
+   "start": "16:00",
+   "slut": "18:00",
+   "plats": "Skärsätra",
+   "kundId": "msuermztnx3e0",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": [
+    {
+     "id": "msujz5medwuic",
+     "kundId": "msuermztnx3e0",
+     "tjanst": "Stupränna 1 plan",
+     "belopp": 3300,
      "klar": false
     }
    ]
