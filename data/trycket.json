@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-15T10:27:17.335Z",
+ "updatedAt": "2026-08-15T10:28:29.490Z",
  "installningar": {
   "foretag": {
    "namn": "NyTrädgård",
@@ -288,7 +288,7 @@
    "start": "10:25",
    "slut": "11:23",
    "typ": "salj",
-   "titel": "Säljrunda",
+   "titel": "Säljrunda Gåshaga",
    "plats": "",
    "kundId": "",
    "notering": "",
