@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-16T16:04:16.684Z",
+ "updatedAt": "2026-08-16T16:43:29.252Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -203,6 +203,21 @@
    "tel": "0766272752",
    "epost": "",
    "status": "bokad",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msw1an3757l6a",
+   "skapad": "2026-08-16T16:43:29.251Z",
+   "namn": "Henrik Västberg",
+   "adress": "Bastuholmsvägen 1",
+   "postnr": "",
+   "ort": "Näsbypark",
+   "tel": "+46 70-656 15 34",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
