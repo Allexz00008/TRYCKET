@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-16T16:51:44.617Z",
+ "updatedAt": "2026-08-16T16:53:20.880Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -654,6 +654,32 @@
    "offerter": 1,
    "saltBelopp": 0,
    "jobb": []
+  },
+  {
+   "id": "msw1nblcf6e6m",
+   "typ": "jobb",
+   "titel": "Näsbypark Strandpromenaden",
+   "datum": "2026-08-28",
+   "start": "16:00",
+   "slut": "19:00",
+   "plats": "Näsbypark",
+   "kundId": "msw1koazqd4lb",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": [
+    {
+     "id": "msw1mqs8xessp",
+     "kundId": "msw1koazqd4lb",
+     "tjanst": "Stupränna",
+     "belopp": 2200,
+     "klar": false
+    }
+   ]
   }
  ],
  "dorrar": []
