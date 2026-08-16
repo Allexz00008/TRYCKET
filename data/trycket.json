@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-16T16:46:13.268Z",
+ "updatedAt": "2026-08-16T16:51:17.388Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -218,6 +218,21 @@
    "tel": "+46 70-656 15 34",
    "epost": "",
    "status": "offert",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msw1koazqd4lb",
+   "skapad": "2026-08-16T16:51:17.387Z",
+   "namn": "Björn Algren",
+   "adress": "Strandpromenaden 9",
+   "postnr": "",
+   "ort": "",
+   "tel": "+46 73-321 16 20",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
