@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-16T16:51:17.388Z",
+ "updatedAt": "2026-08-16T16:51:44.617Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1002,
-  "nastaOffertNr": 109,
+  "nastaOffertNr": 110,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -232,7 +232,7 @@
    "ort": "",
    "tel": "+46 73-321 16 20",
    "epost": "",
-   "status": "lead",
+   "status": "offert",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
@@ -401,6 +401,26 @@
    "rut": true,
    "rabatt": 0,
    "notering": "Enplanshus 29 augusti"
+  },
+  {
+   "id": "msw1l9bdkhqqd",
+   "kundId": "msw1koazqd4lb",
+   "nr": "109",
+   "datum": "2026-08-16",
+   "giltigTill": "2026-09-15",
+   "status": "accepterad",
+   "passId": "msvx6ts2uwim0",
+   "rader": [
+    {
+     "namn": "Stupränna",
+     "antal": 22,
+     "pris": 100,
+     "rut": true
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": ""
   }
  ],
  "fakturor": [],
