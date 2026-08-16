@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-16T16:43:29.252Z",
+ "updatedAt": "2026-08-16T16:44:44.110Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1002,
-  "nastaOffertNr": 108,
+  "nastaOffertNr": 109,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -217,7 +217,7 @@
    "ort": "Näsbypark",
    "tel": "+46 70-656 15 34",
    "epost": "",
-   "status": "lead",
+   "status": "offert",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
@@ -366,6 +366,26 @@
    "rut": true,
    "rabatt": 0,
    "notering": ""
+  },
+  {
+   "id": "msw1c8ulr8sij",
+   "kundId": "msw1an3757l6a",
+   "nr": "108",
+   "datum": "2026-08-16",
+   "giltigTill": "2026-09-15",
+   "status": "accepterad",
+   "passId": "msvx6ts2uwim0",
+   "rader": [
+    {
+     "namn": "Stupränna",
+     "antal": 80,
+     "pris": 36,
+     "rut": true
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": "Enplanshus 29 augusti"
   }
  ],
  "fakturor": [],
