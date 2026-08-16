@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-16T11:10:00.601Z",
+ "updatedAt": "2026-08-16T14:48:32.834Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -566,6 +566,24 @@
      "klar": false
     }
    ]
+  },
+  {
+   "id": "msvx6ts2uwim0",
+   "typ": "salj",
+   "titel": "Stocksund södra",
+   "datum": "2026-08-16",
+   "start": "16:49",
+   "slut": "19:00",
+   "plats": "",
+   "kundId": "",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": []
   }
  ],
  "dorrar": []
