@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T15:28:14.994Z",
+ "updatedAt": "2026-08-17T15:38:07.793Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -233,6 +233,21 @@
    "tel": "+46708585999",
    "epost": "",
    "status": "offert",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msxeefxrqmt22",
+   "skapad": "2026-08-17T15:38:07.791Z",
+   "namn": "Claes Sörensson",
+   "adress": "Svängvägen 6",
+   "postnr": "",
+   "ort": "",
+   "tel": "+46705585860",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
@@ -730,9 +745,9 @@
    "kundId": "",
    "notering": "",
    "klar": false,
-   "dorrar": 9,
-   "oppnade": 5,
-   "samtal": 5,
+   "dorrar": 10,
+   "oppnade": 6,
+   "samtal": 6,
    "offerter": 1,
    "saltBelopp": 0,
    "jobb": []
