@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T14:50:09.663Z",
+ "updatedAt": "2026-08-17T14:56:27.178Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -218,6 +218,21 @@
    "tel": "+46 73-321 16 20",
    "epost": "",
    "status": "bokad",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msxcwug9ddfe1",
+   "skapad": "2026-08-17T14:56:27.178Z",
+   "namn": "Eric Bönnelycke",
+   "adress": "Plogvägen 3",
+   "postnr": "",
+   "ort": "",
+   "tel": "+46708585999",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
