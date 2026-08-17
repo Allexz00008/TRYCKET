@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T12:20:00.016Z",
+ "updatedAt": "2026-08-17T12:33:25.805Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -10,7 +10,7 @@
    "tel": "0762233711",
    "epost": "trycket.sthlm@gmail.com",
    "bankgiro": "",
-   "swish": "",
+   "swish": "+46762233711",
    "momsnr": "",
    "fskatt": true
   },
