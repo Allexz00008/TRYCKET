@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T10:31:42.530Z",
+ "updatedAt": "2026-08-17T10:43:49.961Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -232,7 +232,7 @@
    "ort": "",
    "tel": "+46 73-321 16 20",
    "epost": "",
-   "status": "offert",
+   "status": "bokad",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
