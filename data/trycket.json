@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T10:44:09.219Z",
+ "updatedAt": "2026-08-17T10:44:19.177Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -123,21 +123,6 @@
    "skapad": "2026-08-14T15:51:56.072Z",
    "namn": "Idha",
    "adress": "Vedettvägen 8",
-   "postnr": "",
-   "ort": "",
-   "tel": "",
-   "epost": "",
-   "status": "offert",
-   "kalla": "dörr",
-   "personnr": "",
-   "fastighet": "",
-   "notering": ""
-  },
-  {
-   "id": "mst5fqwnqd8jj",
-   "skapad": "2026-08-14T16:16:07.416Z",
-   "namn": "X",
-   "adress": "Ekbacksvägen 29b",
    "postnr": "",
    "ort": "",
    "tel": "",
