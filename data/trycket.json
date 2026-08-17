@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T15:56:27.676Z",
+ "updatedAt": "2026-08-17T15:59:48.591Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -760,7 +760,7 @@
    "titel": "Näsbypark östra",
    "datum": "2026-08-17",
    "start": "16:37",
-   "slut": "20:00",
+   "slut": "18:00",
    "plats": "Näsbypark Östra",
    "kundId": "",
    "notering": "",
