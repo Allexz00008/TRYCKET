@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T14:12:48.225Z",
+ "updatedAt": "2026-08-17T14:38:26.831Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -680,6 +680,24 @@
    "dorrar": 4,
    "oppnade": 1,
    "samtal": 1,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": []
+  },
+  {
+   "id": "msxc9ounvh4m4",
+   "typ": "salj",
+   "titel": "Näsbypark östra",
+   "datum": "2026-08-17",
+   "start": "16:37",
+   "slut": "20:00",
+   "plats": "Näsbypark Östra",
+   "kundId": "",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
    "offerter": 0,
    "saltBelopp": 0,
    "jobb": []
