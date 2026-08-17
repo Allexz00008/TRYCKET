@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T09:19:57.132Z",
+ "updatedAt": "2026-08-17T09:51:12.152Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -105,12 +105,12 @@
  },
  "mal": {
   "vecka": {
-   "dorrar": 150,
+   "dorrar": 120,
    "samtal": 40,
-   "offerter": 8,
-   "salt": 25000,
-   "timlonSalj": 400,
-   "timlonJobb": 500
+   "offerter": 10,
+   "salt": 50000,
+   "timlonSalj": 1500,
+   "timlonJobb": 800
   },
   "manad": {
    "salt": 100000,
