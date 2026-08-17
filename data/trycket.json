@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T10:43:49.961Z",
+ "updatedAt": "2026-08-17T10:43:59.456Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -217,7 +217,7 @@
    "ort": "Näsbypark",
    "tel": "+46 70-656 15 34",
    "epost": "",
-   "status": "offert",
+   "status": "forlorad",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
