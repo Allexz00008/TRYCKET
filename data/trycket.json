@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T15:41:20.578Z",
+ "updatedAt": "2026-08-17T15:42:27.230Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -771,6 +771,32 @@
    "offerter": 1,
    "saltBelopp": 0,
    "jobb": []
+  },
+  {
+   "id": "msxej8kh84alt",
+   "typ": "jobb",
+   "titel": "Claes Sörensson",
+   "datum": "2026-08-25",
+   "start": "15:00",
+   "slut": "18:00",
+   "plats": "Näsbypark",
+   "kundId": "msxeefxrqmt22",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": [
+    {
+     "id": "msxej13aem29t",
+     "kundId": "",
+     "tjanst": "Stupränna 1 plan",
+     "belopp": 1700,
+     "klar": false
+    }
+   ]
   }
  ],
  "dorrar": []
