@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T16:04:33.668Z",
+ "updatedAt": "2026-08-17T16:32:22.279Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -797,6 +797,24 @@
      "klar": false
     }
    ]
+  },
+  {
+   "id": "msxgc746r9a4j",
+   "typ": "salj",
+   "titel": "Viggbyhol",
+   "datum": "2026-08-17",
+   "start": "18:33",
+   "slut": "20:00",
+   "plats": "Viggbyholm",
+   "kundId": "",
+   "notering": "",
+   "klar": false,
+   "dorrar": 1,
+   "oppnade": 1,
+   "samtal": 1,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": []
   }
  ],
  "dorrar": []
