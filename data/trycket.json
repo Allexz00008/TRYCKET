@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T12:33:25.805Z",
+ "updatedAt": "2026-08-17T13:16:40.813Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -319,7 +319,7 @@
    "nr": "106",
    "datum": "2026-08-15",
    "giltigTill": "2026-09-14",
-   "status": "accepterad",
+   "status": "avvisad",
    "passId": "msuceicccrfzt",
    "rader": [
     {
