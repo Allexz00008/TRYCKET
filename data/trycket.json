@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-18T17:03:20.320Z",
+ "updatedAt": "2026-08-18T17:05:00.168Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -793,9 +793,9 @@
    "kundId": "",
    "notering": "",
    "klar": false,
-   "dorrar": 1,
-   "oppnade": 1,
-   "samtal": 1,
+   "dorrar": 2,
+   "oppnade": 2,
+   "samtal": 2,
    "offerter": 0,
    "saltBelopp": 0,
    "jobb": []
