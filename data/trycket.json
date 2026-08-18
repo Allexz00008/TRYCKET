@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-18T17:42:59.457Z",
+ "updatedAt": "2026-08-18T17:48:51.128Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -248,6 +248,21 @@
    "tel": "+46705585860",
    "epost": "",
    "status": "bokad",
+   "kalla": "dörr",
+   "personnr": "",
+   "fastighet": "",
+   "notering": ""
+  },
+  {
+   "id": "msyyiek7ujnyw",
+   "skapad": "2026-08-18T17:48:51.127Z",
+   "namn": "Marie Beermann",
+   "adress": "Dalstigen 9",
+   "postnr": "",
+   "ort": "",
+   "tel": "+46739140965",
+   "epost": "",
+   "status": "lead",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
