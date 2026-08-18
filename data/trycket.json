@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-18T17:49:58.510Z",
+ "updatedAt": "2026-08-18T17:50:52.560Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -20,7 +20,7 @@
   "betalvillkor": 30,
   "offertGiltig": 30,
   "nastaFakturaNr": 1002,
-  "nastaOffertNr": 112,
+  "nastaOffertNr": 113,
   "schemaStart": 7,
   "schemaSlut": 21,
   "prislista": [
@@ -491,6 +491,26 @@
    "rut": true,
    "rabatt": 0,
    "notering": ""
+  },
+  {
+   "id": "msyyl09ajx8yq",
+   "kundId": "msyyiek7ujnyw",
+   "nr": "112",
+   "datum": "2026-08-18",
+   "giltigTill": "2026-09-17",
+   "status": "skickad",
+   "passId": "msywt4ok8yhn3",
+   "rader": [
+    {
+     "namn": "Stuprännetvätt",
+     "antal": 26,
+     "pris": 80,
+     "rut": true
+    }
+   ],
+   "rut": true,
+   "rabatt": 0,
+   "notering": "Avdrag transportkostnad -500kr"
   }
  ],
  "fakturor": [],
