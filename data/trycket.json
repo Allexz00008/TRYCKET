@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-17T17:48:00.736Z",
+ "updatedAt": "2026-08-18T15:14:46.873Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -760,6 +760,24 @@
    "dorrar": 7,
    "oppnade": 5,
    "samtal": 5,
+   "offerter": 0,
+   "saltBelopp": 0,
+   "jobb": []
+  },
+  {
+   "id": "msyt09ncixjbx",
+   "typ": "salj",
+   "titel": "Nora Skogsvik",
+   "datum": "2026-08-18",
+   "start": "17:17",
+   "slut": "20:00",
+   "plats": "Skogsvik",
+   "kundId": "",
+   "notering": "",
+   "klar": false,
+   "dorrar": 1,
+   "oppnade": 1,
+   "samtal": 1,
    "offerter": 0,
    "saltBelopp": 0,
    "jobb": []
