@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-18T16:32:41.595Z",
+ "updatedAt": "2026-08-18T17:01:12.308Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -779,6 +779,24 @@
    "oppnade": 8,
    "samtal": 8,
    "offerter": 1,
+   "saltBelopp": 0,
+   "jobb": []
+  },
+  {
+   "id": "msywt4ok8yhn3",
+   "typ": "salj",
+   "titel": "Klingsta",
+   "datum": "2026-08-18",
+   "start": "19:00",
+   "slut": "20:00",
+   "plats": "Klingsta",
+   "kundId": "",
+   "notering": "",
+   "klar": false,
+   "dorrar": 0,
+   "oppnade": 0,
+   "samtal": 0,
+   "offerter": 0,
    "saltBelopp": 0,
    "jobb": []
   }
