@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updatedAt": "2026-08-19T07:48:00.651Z",
+ "updatedAt": "2026-08-20T08:09:52.011Z",
  "installningar": {
   "foretag": {
    "namn": "TRYCKET",
@@ -262,7 +262,7 @@
    "ort": "",
    "tel": "+46739140965",
    "epost": "",
-   "status": "offert",
+   "status": "forlorad",
    "kalla": "dörr",
    "personnr": "",
    "fastighet": "",
